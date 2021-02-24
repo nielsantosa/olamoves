@@ -67,24 +67,22 @@ body {
 .carousel .carousel-indicators .active {
   background-color: #444;
 }
-.carousel-inner {
-  width: 1250px;
-  text-align: center;
-  margin: 0 auto;
-}
 
 .carousel-indicators {
   height: 100px;
 }
+
+.carousel-inner {
+  width: 75% !important;
+  margin: 0px auto;
+}
+
 .card {
   align-items: center;
-  background-color: transparent;
-  border-width: 0px;
-
+  border: 0px !important;
 }
 
 .header_one {
-
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
