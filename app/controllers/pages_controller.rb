@@ -13,4 +13,9 @@ class PagesController < ApplicationController
     puts @video_type
 
   end
+
+  def myprofile
+    @user = current_user
+    @videos = Video.where(user: @user)
+  end
 end
