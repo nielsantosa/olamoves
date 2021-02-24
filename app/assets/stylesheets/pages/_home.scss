@@ -24,7 +24,7 @@ body {
 
 .banner {
   background-image: url(https://source.unsplash.com/xB4ExGcUai0);
-  height: 500px;
+  height: 550px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -43,16 +43,16 @@ body {
 .left .fa-play {
   color: #C4C4C4;
   position: absolute;
-  left: 170px;
-  top: 100px;
+  left: 130px;
+  top: 90px;
   transform: rotate(180deg);
 }
 
 .right .fa-play {
   color: #C4C4C4;
   position: absolute;
-  right: 170px;
-  top: 100px;
+  right: 130px;
+  top: 90px;
 }
 
 .carousel .carousel-indicators {
@@ -60,7 +60,7 @@ body {
 }
 
 .carousel .carousel-indicators li {
-  background-color: #fff;
+  background-color: #C4C4C4;
   background-color: rgba(70, 70, 70, 0.25);
 }
 
@@ -80,9 +80,10 @@ body {
 .card {
   align-items: center;
   border: 0px !important;
+  background-color: transparent;
 }
 
-.header_one {
+.header {
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
@@ -90,14 +91,7 @@ body {
   line-height: 49px;
   /* identical to box height */
   color: #000000;
-}
-
-.header_two {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 49px;
+  margin-left: 25px;
 }
 
 .card-title {
@@ -114,7 +108,15 @@ body {
   color: black;
 }
 
-.card-text{
+.card-body {
+  position: relative;
+  padding-left: 0px;
+  width: 200px;
+  left: -45px;
+
+
+}
+.card-text {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -123,5 +125,5 @@ body {
 }
 
 .line {
-  width: 1800px;
+  width: 85%;
 }
