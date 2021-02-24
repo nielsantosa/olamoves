@@ -6,8 +6,6 @@ class PagesController < ApplicationController
 
   def myprofile
     @user = current_user
-
-    raise
     @videos = Video.where(user: @user)
   end
 end
