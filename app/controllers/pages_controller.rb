@@ -16,9 +16,9 @@ class PagesController < ApplicationController
 
   def myprofile
     @user = current_user
-    # user_order = @user.orders.confirmed?
-    # @videos = user_order.
-    @videos = @user.videos.where(Order.confirmed?)
+    @purchased_order = Order.where(user: @user, confirmed: true)
+    @purchased_videos = @purchased_order.map do |order|
+      order.video
+    end
   end
-
 end

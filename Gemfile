@@ -39,8 +39,6 @@ gem 'devise'
 gem 'faker'
 gem 'pexels'
 
-gem 'pexels'
-
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
