@@ -1,4 +1,23 @@
 // Specific CSS for your home-page
+.home-header {
+  background: rgba(255,255,255,0.5);
+  padding: 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  align-items: center;
+  text-align: center;
+  display: inline;
+  padding: 10px;
+}
+
+.search {
+  border: grey;
+  background: rgba(255,255,255,0.9);
+
+}
 body {
   background-color: #F8F9FA;
 }
@@ -8,45 +27,103 @@ body {
   height: 500px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .banner-items {
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+
+
+
+}
+.left .fa-play {
+  color: #C4C4C4;
+  position: absolute;
+  left: 170px;
+  top: 100px;
+  transform: rotate(180deg);
+}
+
+.right .fa-play {
+  color: #C4C4C4;
+  position: absolute;
+  right: 170px;
+  top: 100px;
+}
+
+.carousel .carousel-indicators {
+  padding-top: 250px;
+}
+
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.25);
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #444;
+}
+.carousel-inner {
+  width: 1250px;
   text-align: center;
-  padding: 150px;
+  margin: 0 auto;
+}
+
+.carousel-indicators {
+  height: 100px;
+}
+.card {
+  align-items: center;
+  background-color: transparent;
+  border-width: 0px;
 
 }
 
-.header1 {
-  position: absolute;
-  width: 281px;
-  height: 49px;
-  left: 42px;
-  top: 880px;
+.header_one {
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 49px;
   /* identical to box height */
   color: #000000;
 }
 
-.header2 {
-  position: absolute;
-  width: 253px;
-  height: 49px;
-  left: 43px;
-  top: 1322px;
-
+.header_two {
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 49px;
 }
 
+.card-title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: black;
+}
 
-div {
-  position: relative;
+.card-title:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.card-text{
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.line {
+  width: 1800px;
 }
