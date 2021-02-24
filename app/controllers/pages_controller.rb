@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def myprofile
+    @user = current_user
+    @videos = Video.where(user: @user)
+  end
 end
