@@ -5,4 +5,6 @@ class Order < ApplicationRecord
 
   validates :user, presence: true
   validates :video, presence: true
+
+  scope :confirmed?, -> { where(confirmed: true) }
 end
