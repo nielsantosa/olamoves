@@ -1,4 +1,4 @@
-.container {
+.main-container {
   display: flex;
   justify-content: space-between;
 }
@@ -8,12 +8,18 @@
   padding: 40px;
   box-shadow: 0px 1px 6px color(whitesmoke);
   border-radius: 4px;
-  margin: 20px 0px;
+  // margin: 20px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 1160px;
 }
 
 .card-column-1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-top: 10px;
   margin-bottom: 50px;
@@ -31,5 +37,9 @@
   img {
     width: 350px;
     }
+}
+
+.col-3 {
+  margin-top: 260px;;
 }
 
