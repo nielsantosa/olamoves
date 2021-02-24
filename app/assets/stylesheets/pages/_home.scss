@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+body {
+  background-color: #F8F9FA;
+}
+
+.banner {
+  background-image: url(https://source.unsplash.com/xB4ExGcUai0);
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner-items {
+  text-align: center;
+  padding: 150px;
+
+}
+
+.header1 {
+  position: absolute;
+  width: 281px;
+  height: 49px;
+  left: 42px;
+  top: 880px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.header2 {
+  position: absolute;
+  width: 253px;
+  height: 49px;
+  left: 43px;
+  top: 1322px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+
+div {
+  position: relative;
+}
