@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :purchases, through: :orders
 
   validates :name, presence: true
+  has_one_attached :photo
+
 end

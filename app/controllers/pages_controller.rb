@@ -10,4 +10,5 @@ class PagesController < ApplicationController
     # @videos = user_order.
     @videos = @user.videos.where(Order.confirmed?)
   end
+
 end
