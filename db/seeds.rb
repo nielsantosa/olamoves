@@ -23,6 +23,18 @@ def generate_pexel_video
   # [video_url, video_type]
 end
 
+def generate_video(selected_videos)
+  chosen_video = Video.all.sample
+
+  while selected_videos.include?(chosen_video)
+    chosen_video = Video.all.sample
+  end
+
+  selected_videos << chosen_video
+
+  [selected_videos, chosen_video]
+end
+
 puts "Generating videos from pexel video API"
 videos = generate_pexel_video
 
@@ -56,14 +68,23 @@ puts "Creating Users - start"
   user = User.new(name: name, email: email, password: password)
   user.save!
 
+  # Empty array to check if videos has been selected
+  selected_videos = []
+
   puts "Creating Confirmed Orders - start"
-  (1..2).to_a.each do |i|
-    chosen_video = Video.all.sample
-    Order.create!(video: chosen_video, user: user, confirmed: true)
+  (1..3).to_a.each do |i|
+    selected_videos, chosen_video = generate_video(selected_videos)
+
+    purchase = Purchase.create!
+
+    puts "Creating confirmed orders - #{i}"
+    Order.create!(video: chosen_video, user: user, confirmed: true, purchase: purchase)
   end
   puts "Creating Unconfirmed Orders - start"
-  (1..2).to_a.each do |i|
-    chosen_video = Video.all.sample
+  (1..4).to_a.each do |i|
+    selected_videos, chosen_video = generate_video(selected_videos)
+
+    puts "Creating unconfirmed orders - #{i}"
     Order.create!(video: chosen_video, user: user, confirmed: false)
   end
 end
