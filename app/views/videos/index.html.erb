@@ -17,13 +17,13 @@
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
             <label class="form-check-label" for="exampleRadios3">
               📊 Intermediate
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
             <label class="form-check-label" for="exampleRadios3">
               📊 Advanced
             </label>
@@ -33,7 +33,18 @@
       <div class="col-9">
         <div class='image-container'>
 
+              <% @videos.each do |video| %>
                 <div class="card-display">
+                  <div>
+                    <video controls width="400" autoplay src="<%= video.video_url %>" type="<%= video.video_type %>"> <!-- Showing the video type -->
+                      Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                    </video>
+                    </div>
+                    <h4><%= video.title %></h4>
+                    <h6>by who |  <%= video.duration %>mins</h6>
+                  </div>
+              <% end %>
+                <%# <div class="card-display">
                   <h5>
                     <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" alt="yoga">
                   </h5>
@@ -67,14 +78,7 @@
                   </h5>
                   <h4>Hot Yoga</h4>
                   <h6>by who | 35mins</h6>
-                </div>
-                <div class="card-display">
-                  <h5>
-                    <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" alt="yoga">
-                  </h5>
-                  <h4>Hot Yoga</h4>
-                  <h6>by who | 35mins</h6>
-                </div>
+                </div> %>
         </div>
       <%# </div> %>
     </div>
