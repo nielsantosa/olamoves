@@ -6,9 +6,9 @@
     <h1><%= @user.name %></h1>
     <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
   </div>
-  <div class="video-container">
-    <% @videos.each do |vid| %>
-      <video controls width="400" autoplay src="<%= vid.video_url %>" type="<%= vid.video_type %>">
+  <div class="video-container my-10">
+    <% @purchased_videos.each do |vid| %>
+      <video controls width="400" autoplay src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
       Sorry, your browser doesn't support embedded videos.
       </video>
     <% end %>
