@@ -1,2 +1,186 @@
-<h1>Pages#home</h1>
+
 <%= link_to 'My Profile', myprofile_path %>
+
+
+
+<div class="banner">
+  <div class="banner-items">
+    <h1 class="home-header">DISCOVER WELLNESS THROUGH MOVEMENT</h1>
+    <br>
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Find a class!" name="search" class="search">
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<div>
+  <p class="header_one">Popular Classes</p>
+ <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls">
+        <a class="btn-floating left" href="#multi-item-example" data-slide="prev"><i class="fas fa-play"></i></a>
+        <a class="btn-floating right" href="#multi-item-example" data-slide="next"><i class="fas fa-play"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card align-items-center">
+              <video controls width="300" autoplay src="<%= @videos_one.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+
+                <div class="card-body">
+                <h4><%= link_to @videos_one.title, "#", class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_one.price %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_two.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_two.price %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_three.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_three.price %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_four.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_four.price %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_five.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_five.price %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_six.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_six.price %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.Second slide-->
+
+        <!--Third slide-->
+        <div class="carousel-item">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_seven.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_seven.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_seven.price %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_eight.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_eight.price %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2">
+              <video controls width="300" autoplay src="<%= @videos_nine.video_url %>" type="<%= @video_type %>">
+              Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+                <div class="card-body">
+                  <h4><%= link_to @videos_nine.title, "#", class: "card-title" %></h4>
+                  <p class="card-text">$<%= @videos_nine.price %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.Third slide-->
+
+      </div>
+      <!--/.Slides-->
+      <!--Indicators-->
+      <div>
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      </div>
+      <!--/.Indicators-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+  </div>
+</div>
+<br>
+<hr class="line">
+<div>
+  <p class="header_two">Latest Classes</p>
+</div>
