@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0px 1px 6px color(whitesmoke);
+  border-radius: 4px;
+  margin: 20px 0px;
+}
+
+.card-column-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.card-column-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+
+.card-display {
+  img {
+    width: 350px;
+    }
+}
+
