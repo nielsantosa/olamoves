@@ -1,1 +1,32 @@
-<h1>Orders#checkout</h1>
+
+<div class="container">
+  <div class="my-cart">
+    <h2 class="text-center">My Cart</h2>
+    <% if @purchased_videos %>
+    <% @purchased_videos.each do |video| %>
+    <div class="checkout-card bg-white p-4 my-3 rounded">
+      <div>
+        <video controls width="400" autoplay src="<%= video.video_url %>" type="<%= video.video_type %>"> <!-- Showing the video type -->
+          Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+        </video>
+        <p>Duration : <%= video.duration %> mins</p>
+      </div>
+      <div>
+        <%= video.title %>
+      </div>
+      <div>SGD <%= video.price %></div>
+      <div><i class="fas fa-trash"></i></div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="total-price p-4 my-3 rounded bg-white">
+    <h3>TOTAL PRICE : SGD <%= @total_price %></h3>
+  </div>
+  <div class="total-price p-4 my-3 rounded bg-white">
+    <%= link_to "PROCEED TO PAYMENT", root_path, class: 'btn btn-primary' %>
+  </div>
+
+</div>
+
