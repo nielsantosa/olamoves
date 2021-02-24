@@ -6,6 +6,8 @@ class PagesController < ApplicationController
 
   def myprofile
     @user = current_user
-    @videos = Video.where(user: @user)
+    # user_order = @user.orders.confirmed?
+    # @videos = user_order.
+    @videos = @user.videos.where(Order.confirmed?)
   end
 end

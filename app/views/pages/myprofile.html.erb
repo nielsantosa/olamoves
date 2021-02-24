@@ -1,8 +1,15 @@
-<div class="container">
-  <div class="profile-banner">
-    <%= cl_image_tag("https://res.cloudinary.com/cheyennelu/image/upload/v1614143078/yoga-banner.jpg", width: 1200, height: 350, crop: :fill) %>
-  </div>
-  <h1>Welcome, <%= @user.name %>!</h1>
+<%= cl_image_tag("https://res.cloudinary.com/cheyennelu/image/upload/v1614143078/yoga-banner.jpg", width: '100%', height: 320, background: 'white', crop: :lpad) %>
 
+<div class="container">
+
+  <h1>Welcome, <%= @user.name %>!</h1>
+  <div class="video-container">
+    <% @videos.each do |vid| %>
+      <video controls width="400" autoplay src="<%= vid.video_url %>" type="<%= vid.video_type %>">
+      Sorry, your browser doesn't support embedded videos.
+      </video>
+    <% end %>
+  </div>
 
 </div>
+
