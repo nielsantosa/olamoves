@@ -28,7 +28,8 @@ video_url, video_type = generate_pexel_video
     price: price,
     difficulty: difficulty,
     duration: duration,
-    video_url: video_url)
+    video_url: video_url
+    video_type: video_type)
 end
 
 puts "Finish seeding 🍑"
