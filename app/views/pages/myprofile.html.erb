@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Welcome, <%= @user.name %>!</h1>
+
+  <div class="video-container">
+    <h3>My Class</h3>
+    <% @videos.each do |video| %>
+      <%= video.title %>
+    <% end %>
+  </div>
+</div>

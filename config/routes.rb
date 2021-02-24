@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :videos, only: [:index, :show]
 
   get '/cart', to: 'orders#checkout'
+  get '/myprofile', to: 'pages#myprofile'
 end
