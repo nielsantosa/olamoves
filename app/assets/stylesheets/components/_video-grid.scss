@@ -1,0 +1,11 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+.video-card {
+  video {
+    width: 100%;
+  }
+}
+
