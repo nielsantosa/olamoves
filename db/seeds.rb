@@ -6,6 +6,9 @@ User.destroy_all
 puts "Cleaning videos data 🧹"
 Video.destroy_all
 
+puts "Cleaning purchases data 🧹"
+Purchase.destroy_all
+
 puts "Cleaning orders data 🧹"
 Order.destroy_all
 
@@ -50,15 +53,21 @@ puts "Creating Users - start"
   email = Faker::Internet.email
   password = "testtest"
   puts "Creating User #{name}"
-  User.create!(name: name, email: email, password: password)
+  user = User.new(name: name, email: email, password: password)
+  user.save!
+
+  puts "Creating Confirmed Orders - start"
+  (1..2).to_a.each do |i|
+    chosen_video = Video.all.sample
+    Order.create!(video: chosen_video, user: user, confirmed: true)
+  end
+  puts "Creating Unconfirmed Orders - start"
+  (1..2).to_a.each do |i|
+    chosen_video = Video.all.sample
+    Order.create!(video: chosen_video, user: user, confirmed: false)
+  end
 end
 
-puts "Creating Orders - start"
-15.times do
-  chosen_user = User.all.sample
-  chosen_video = Video.all.sample
-  confirmed = [true, false].sample
-  Order.create!(video: chosen_video, user: chosen_user, confirmed: confirmed)
-end
+
 
 puts "Finish seeding 🍑"
