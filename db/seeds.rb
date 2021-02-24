@@ -1,7 +1,13 @@
 puts "Start seeding 🍑"
 
+puts "Cleaning users data 🧹"
+User.destroy_all
+
 puts "Cleaning videos data 🧹"
 Video.destroy_all
+
+puts "Cleaning orders data 🧹"
+Order.destroy_all
 
 def generate_pexel_video
   pexels_key = "563492ad6f9170000100000138c8f4c57b1c4c69a53d72daaeb561d3" # Your authentication key
@@ -14,8 +20,10 @@ def generate_pexel_video
   # [video_url, video_type]
 end
 
+puts "Generating videos from pexel video API"
 videos = generate_pexel_video
 
+puts "Generating Videos - start"
 (0..10).to_a.each do |i|
   title = Faker::Restaurant.name
   description = Faker::Restaurant.description
@@ -36,7 +44,21 @@ videos = generate_pexel_video
     video_type: video_type)
 end
 
-puts "Creating Users 💁‍♀️"
+puts "Creating Users - start"
+3.times do
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  password = "testtest"
+  puts "Creating User #{name}"
+  User.create!(name: name, email: email, password: password)
+end
 
+puts "Creating Orders - start"
+15.times do
+  chosen_user = User.all.sample
+  chosen_video = Video.all.sample
+  confirmed = [true, false].sample
+  Order.create!(video: chosen_video, user: chosen_user, confirmed: confirmed)
+end
 
 puts "Finish seeding 🍑"
