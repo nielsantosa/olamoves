@@ -46,7 +46,7 @@
                       Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                     </video>
                     </div>
-                    <h4><%= video.title %></h4>
+                    <h4><%= link_to video.title, video_path(video.id) %></h4>
                     <h6>by who |  <%= video.duration %>mins | difficulty level: <%= video.difficulty %></h6>
                   </div>
               <% end %>
