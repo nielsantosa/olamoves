@@ -12,10 +12,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def create
+    video_id = params.require(:video).require(:video)
+    video = Video.find(video_id)
+    order = Order.new(user: current_user, confirmed: false)
+    order.video = video
+    order.save
+    redirect_to cart_path
+  end
+
   def destroy
     order = Order.find(params[:id])
     order.destroy
-
     redirect_to cart_path
   end
 end
+
