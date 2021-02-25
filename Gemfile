@@ -39,6 +39,7 @@ gem 'devise'
 gem 'faker'
 gem 'pexels'
 gem 'money-rails'
+gem 'stripe'
 
 group :development, :test do
   gem 'pry-byebug'
