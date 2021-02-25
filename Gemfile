@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'faker'
 gem 'pexels'
+gem 'money-rails'
 
 group :development, :test do
   gem 'pry-byebug'
