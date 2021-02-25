@@ -1,28 +1,39 @@
 
 <div class="container">
-  <div class="my-cart">
-    <h2 class="text-center">My Cart</h2>
-    <% if @purchased_orders %>
-    <% @purchased_orders.each do |order| %>
-    <div class="checkout-card bg-white p-4 my-3 rounded">
-      <div>
-        <video controls width="400" autoplay src="<%= order.video.video_url %>" type="<%= order.video.video_type %>"> <!-- Showing the video type -->
-          Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-        </video>
-        <p>Duration : <%= order.video.duration %> mins</p>
-      </div>
-      <div>
-        <%= order.video.title %>
-      </div>
-      <div>SGD <%= order.video.price %></div>
-      <div>
-      <%= link_to order_path(order), method: "delete" do %>
-      <i class="fas fa-trash"></i>
-      <% end %>
-      </div>
+  <div class="my-cart p-4 my-3 bg-white">
+    <div class="my-cart-title">
+      <h2 class="text-center">My Cart</h2>
     </div>
-    <% end %>
-    <% end %>
+    <div class="my-cart-body bg-light p-4">
+
+
+      <% if @purchased_orders.first %>
+      <% @purchased_orders.each do |order| %>
+      <div class="checkout-card bg-white p-4 my-3 rounded">
+        <div>
+          <video controls width="400" autoplay src="<%= order.video.video_url %>" type="<%= order.video.video_type %>"> <!-- Showing the video type -->
+            Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+          </video>
+          <p>Duration : <%= order.video.duration %> mins</p>
+        </div>
+        <div>
+          <%= order.video.title %>
+        </div>
+        <div>SGD <%= order.video.price %></div>
+        <div>
+          <%= link_to order_path(order), method: "delete" do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="text-center">
+        <h3>Oh no.. Your cart is empty</h3>
+        <%= link_to "Click here to Browse for videos", videos_path %>
+      </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="total-price p-4 my-3 rounded bg-white">
