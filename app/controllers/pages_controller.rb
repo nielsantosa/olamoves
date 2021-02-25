@@ -12,6 +12,8 @@ class PagesController < ApplicationController
     @videos_seven = @videos[6]
     @videos_eight = @videos[7]
     @videos_nine = @videos[8]
+
+    # @pop_vid = Video.where("price > 100").order(:price).reverse_order
   end
 
   def myprofile
