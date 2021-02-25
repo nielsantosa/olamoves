@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:new, :create, :destroy]
   get '/cart', to: 'orders#checkout'
 
+  get '/confirm', to: 'orders#confirm'
+
   get '/myprofile', to: 'pages#myprofile'
 
   get '/payment', to: 'pages#payment'
