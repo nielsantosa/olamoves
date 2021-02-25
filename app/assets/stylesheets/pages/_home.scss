@@ -58,23 +58,10 @@ body {
   top: 90px;
 }
 
-.left-2 .fa-play {
-  color: #C4C4C4;
-  position: absolute;
-  left: 130px;
-  top: 90px;
-  transform: rotate(180deg);
-}
-
-.right-2 .fa-play {
-  color: #C4C4C4;
-  position: absolute;
-  right: 130px;
-  top: 90px;
-}
 
 .carousel .carousel-indicators {
-  padding-top: 250px;
+  position: absolute;
+  top: 280px;
 }
 
 .carousel .carousel-indicators li {
@@ -93,6 +80,7 @@ body {
 .carousel-inner {
   width: 75% !important;
   margin: 0px auto;
+  position: relative;
 }
 
 .card {
