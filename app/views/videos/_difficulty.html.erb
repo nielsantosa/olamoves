@@ -1,33 +1,29 @@
 <div class="difficulty-bar">
-  <h3>DIFFICULTY❓</h3>
+  <h4 style="text-align: center">DIFFICULTY LEVEL</h4>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" value="option1">
-      <label class="form-check-label" for="exampleRadios1">
-        📊 1
-      </label>
+      <%= link_to difficulty_filter_videos_path(1) do %>
+        <span><i class="fas fa-signal"></i> 1</span>
+      <% end %>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-          📊 2
-        </label>
+      <%= link_to difficulty_filter_videos_path(2) do %>
+        <span><i class="fas fa-signal"></i> 2</span>
+      <% end %>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" value="option3">
-        <label class="form-check-label" for="exampleRadios3">
-          📊 3
-        </label>
+      <%= link_to difficulty_filter_videos_path(3) do %>
+        <span><i class="fas fa-signal"></i> 3</span>
+      <% end %>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" value="option3">
-        <label class="form-check-label" for="exampleRadios4">
-          📊 4
-        </label>
+      <%= link_to difficulty_filter_videos_path(4) do %>
+        <span><i class="fas fa-signal"></i> 4</span>
+      <% end %>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" value="option3">
-        <label class="form-check-label" for="exampleRadios5">
-          📊 5
-        </label>
+      <%= link_to difficulty_filter_videos_path(5) do %>
+        <span><i class="fas fa-signal"></i> 5</span>
+      <% end %>
     </div>
+    <%= link_to 'All Videos', videos_path, class: 'btn btn-primary btn-block' %>
 </div>

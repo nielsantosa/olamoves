@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :videos, only: [:index, :show]
+  resources :videos, only: [:index, :show] do
+    collection do
+      get 'difficulty/:level', action: :difficulty, as: 'difficulty_filter'
+    end
+  end
 
   resources :orders, only: [:new, :create, :destroy]
   get '/cart', to: 'orders#checkout'
