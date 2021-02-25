@@ -15,7 +15,7 @@
 <div class="container my-10">
   <div class="video-container">
     <% @purchased_videos.each do |vid| %>
-      <video controls width="400" autoplay src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+      <video controls width="400" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
       Sorry, your browser doesn't support embedded videos.
       </video>
     <% end %>
