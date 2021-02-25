@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'orders#checkout'
   get '/myprofile', to: 'pages#myprofile'
+  get '/payment', to: 'pages#payment'
 end
