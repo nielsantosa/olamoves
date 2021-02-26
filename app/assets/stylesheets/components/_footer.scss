@@ -2,6 +2,7 @@
   justify-content: center;
   background-color: #1EA896;
   font-size: 40px;
+  height: 150px;
 }
 
 .footer-word {
@@ -11,4 +12,13 @@
 
 .icons a {
   margin: 0 50px;
+}
+
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -100px;
+    padding-bottom: 100px;
 }
