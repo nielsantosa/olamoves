@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   get '/payment', to: 'pages#payment'
 
+  get '/instructors', to: 'pages#instructors'
+
 end

@@ -18,6 +18,7 @@ puts "Creating instructors..."
   name = Faker::Name.name
   email = Faker::Internet.email
   password = "testtest"
+  # photo = Cloudinary::Uploader.upload('https://kitt.lewagon.com/placeholder/users/random')
   puts "Creating User #{name}"
   user = User.new(name: name, email: email, password: password, instructor: true)
   user.save!
