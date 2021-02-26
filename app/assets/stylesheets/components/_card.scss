@@ -5,6 +5,14 @@
   grid-gap: 16px;
 }
 
-.review-card {
-  background-color: #E8E8E8;
+.review-portion {
+  margin-bottom: 1.4rem;
+  .review-card {
+    background-color: #E8E8E8;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    margin-top: 1.4rem;
+  }
 }

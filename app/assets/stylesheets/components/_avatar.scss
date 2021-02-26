@@ -26,10 +26,20 @@
   position: absolute;
 }
 
-.img-and-name img {
-  width: 120px;
-  top: -64px;
-  border-radius: 50%;
+.img-and-name {
+  img {
+    width: 120px;
+    top: -64px;
+    border-radius: 50%;
+  }
+  h2 {
+    padding-top: 60px;
+    padding-left: 17px;
+  }
 }
 
+.fas {
+  font-size: 2.4rem;
+  color: #F2A541;
+}
 
