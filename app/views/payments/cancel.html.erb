@@ -1,19 +1,25 @@
+<!-- Remove this during demo -->
 <h1>Payment#cancel</h1>
 
-<h1>Sorry, Your payments not succeed yet!</h1>
+<div class="container min-vh-100">
+  <div class="col-12 col-md-6 m-auto">
 
-<% if @purchase_paid %>
-<%= @purchases_paid.state %>
-<% @purchase_paid.orders.each do |o| %>
-<%= o.video.title %><%= humanized_money_with_symbol o.video.price_cents %>
-<% end %>
-<% end %>
 
-<% if @purchase_pending %>
-<%= @purchases_pending.state %>
-<% @purchase_pending.orders.each do |o| %>
-<%= o.video.title %><%= humanized_money_with_symbol o.video.price_cents %>
-<% end %>
-<% end %>
+    <h1>Sorry!</h1>
+    <h3>Your payment is not successful</h3>
 
-<%= link_to "Go back to carts", cart_path, class: "btn btn-primary"%>
+    <div class="bg-white p-4 my-2">
+    <% if @purchase %>
+      <h4>Payment status : <%= @purchase.state %></h4>
+      <h4>Item Bought : </h4>
+      <% @purchase.orders.each do |o| %>
+      <h4><%= o.video.title %> <%= humanized_money_with_symbol o.video.price %></h4>
+      <% end %>
+      <h4>Total Amount spent : <%= humanized_money_with_symbol @purchase.total_price %> </h4>
+      <% end %>
+    </div>
+    <div class="my-2">
+      <%= link_to "Go back to carts", cart_path, class: "btn btn-primary"%>
+    </div>
+    </div>
+  </div>
