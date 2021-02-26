@@ -1,0 +1,7 @@
+<div class="container">
+  <h1 class="header">Share your Thoughts!</h1>
+  <%= simple_form_for @goal, :url => comment_goal_path, method: 'patch' do |f| %>
+  <%= f.input :comment, label: false %>
+  <%= f.submit "Submit", :class => 'btn btn-primary' %>
+  <% end %>
+</div>

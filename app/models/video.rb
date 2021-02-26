@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
   has_many :orders
+  belongs_to :user
 
   validates :title, presence: true
   validates :description, presence: true
@@ -10,4 +11,12 @@ class Video < ApplicationRecord
   validates :video_type, presence: true
 
   monetize :price_cents
+
+  validate :check_if_user_is_instructor
+
+  def check_if_user_is_instructor
+    unless user.instructor?
+      errors.add(:user, "cannot create")
+    end
+  end
 end

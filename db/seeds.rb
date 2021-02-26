@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Start seeding 🍑"
 
 puts "Cleaning orders data 🧹"
@@ -11,6 +13,20 @@ User.destroy_all
 
 puts "Cleaning videos data 🧹"
 Video.destroy_all
+
+puts "Creating instructors..."
+
+5.times do
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  password = "testtest"
+  puts "Creating User #{name}"
+  user = User.new(name: name, email: email, password: password, instructor: true)
+  file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
+  user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
+
+  user.save!
+end
 
 def generate_pexel_video
   pexels_key = "563492ad6f9170000100000138c8f4c57b1c4c69a53d72daaeb561d3" # Your authentication key
@@ -56,7 +72,8 @@ puts "Generating Videos - start"
     difficulty: difficulty,
     duration: duration,
     video_url: video_url,
-    video_type: video_type)
+    video_type: video_type,
+    user: User.where(instructor: true).sample)
 end
 
 puts "Creating Users - start"
@@ -85,8 +102,12 @@ puts "Creating Users - start"
     puts "Creating unconfirmed orders - #{i}"
     Order.create!(video: chosen_video, user: user, confirmed: false)
   end
+
+  puts "Creating Unconfirmed Goals - start"
+  (1..4).to_a.each do |i|
+
+    puts "Creating unconfirmed goals - #{i}"
+    Goal.create!(user: user, description: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false))
+  end
 end
-
-
-
 puts "Finish seeding 🍑"

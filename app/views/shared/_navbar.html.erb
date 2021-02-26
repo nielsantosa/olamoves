@@ -1,6 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand", id: "logo-font" do %>
-    <h1>olamoves</h1>
+  <% if user_signed_in? %>
+     <%= link_to "olamoves", user_root_path, class: "logo-font" %>
+  <% else %>
+    <%= link_to "olamoves", root_path, class: "logo-font" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,13 +17,22 @@
         <% end %>
       </li>
       <li class="nav-item active">
-        <a href="#"><h6>INSTRUCTORS</h6></a>
+        <%= link_to instructors_path do %>
+          <h6>INSTRUCTORS</h6>
+        <% end %>
       </li>
       <li class="nav-item active">
         <%= link_to cart_path do %>
           <h6>MY CART</h6>
         <% end %>
       </li>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= form_tag workout_path, method: :post do %>
+            <%= submit_tag "Did a workout!", class: "btn btn-primary btn-navbar" %>
+          <% end %>
+        </li>
+      <% end %>
       <li class="nav-item dropdown">
         <i class="fas fa-user avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #1EA896; font-size: 1.5em;"></i>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

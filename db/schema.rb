@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2021_02_26_062106) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.string "description"
+    t.boolean "completed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.date "date"
+    t.string "comment"
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_062106) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.boolean "instructor", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -81,11 +93,22 @@ ActiveRecord::Schema.define(version: 2021_02_26_062106) do
     t.string "video_url"
     t.string "video_type"
     t.integer "price_cents", default: 0, null: false
+    t.integer "user_id"
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "goals", "users"
   add_foreign_key "orders", "purchases"
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "videos"
   add_foreign_key "purchases", "users"
+  add_foreign_key "videos", "users"
 end
