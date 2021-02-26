@@ -1,5 +1,10 @@
-#logo-font h1 {
+.logo-font {
   font-family: 'Sacramento', cursive;
   color: #1EA896;
   font-size: 3em;
+}
+
+.logo-font:hover {
+  text-decoration: none;
+  color: #1EA896;
 }
