@@ -44,7 +44,7 @@
     <%= link_to "PROCEED TO PAYMENT", confirm_path, class: 'btn btn-primary' %>
   </div>
 
-  <%= form_tag orders_path do %>
+  <%= form_tag purchases_path, method: :post do %>
   <%= hidden_field_tag 'orders', @purchased_orders %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
   <% end %>
