@@ -58,5 +58,7 @@ class PagesController < ApplicationController
     @video = @videos[9]
 
     @workout  = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
+  def instructors
+    @users = User.where(instructor: true)
   end
 end
