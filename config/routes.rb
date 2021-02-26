@@ -25,4 +25,5 @@ Rails.application.routes.draw do
       patch 'comment', action: :comment, as: 'comment'
     end
   end
+  get '/instructors', to: 'pages#instructors'
 end

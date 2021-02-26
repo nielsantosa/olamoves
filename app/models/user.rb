@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :videos, through: :orders
   has_many :purchases, through: :orders
   has_many :goals, dependent: :destroy
+  has_many :videos, dependent: :destroy
 
   validates :name, presence: true
   has_one_attached :photo

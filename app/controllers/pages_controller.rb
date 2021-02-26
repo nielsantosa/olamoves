@@ -52,8 +52,7 @@ class PagesController < ApplicationController
 
     @video = @videos[9]
 
-
-
-
+  def instructors
+    @users = User.where(instructor: true)
   end
 end

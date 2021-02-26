@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="instructor-box">
+    <% @users.each do |user| %>
+      <%= cl_image_tag user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge' %>
+    <% end %>
+  </div>
+</div>
