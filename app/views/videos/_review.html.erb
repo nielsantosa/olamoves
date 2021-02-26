@@ -7,8 +7,12 @@
       <div class="review-card">
         <div class="review-top-portion d-flex justify-content-between">
           <div class="img-and-name d-flex">
-            <img src="https://images.unsplash.com/photo-1586083702768-190ae093d34d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=995&q=80" alt="man">
-            <h2> <%= review.user.name %></h2>
+            <% if review.user.photo.attached? %>
+              <%= cl_image_tag(review.user.photo.key) %>
+            <% else %>
+              <img src="http://simpleicon.com/wp-content/uploads/multy-user-256x256.png" alt="standardPic">
+            <% end %>
+            <h2> <%= review.user.name %> </h2>
           </div>
           <div class="rating-stars d-flex pt-2">
           <% review.rating.times do  %>
