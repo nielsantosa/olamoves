@@ -37,5 +37,7 @@ class PagesController < ApplicationController
   end
 
   def user
+    user = current_user
+    @goals = Goal.where(user: user, completed: false)
   end
 end

@@ -1,1 +1,8 @@
-<h1>hello</h1>
+<h1><%= link_to "Goals", goals_path %></h1>
+
+
+<ul>
+  <% @goals.each do |goal| %>
+    <li><%= goal.description %></li>
+  <% end %>
+</ul>

@@ -1,1 +1,67 @@
-<h1>Test</h1>
+<h1>My Goals</h1>
+
+<div class="container">
+  <h2>New Goals</h2>
+  <%= simple_form_for @goal, :url => goals_path, method: 'post' do |f| %>
+    <%= f.input :description %>
+    <%= f.submit "New goal", :class => 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<div class="container">
+  <h2>Current Goals</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Curret Goals</th>
+        <th scope="col">Goal set on</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @goals_current.each do |goal| %>
+        <tr>
+          <td>
+          <%= goal.description %>
+
+          </td>
+          <td><%= goal.date %></td>
+          <td>
+            <%= link_to goal_path(goal),
+                  method: :patch,
+                  data: { confirm: "Completed?", commit: 'YES', cancel: 'NO'} do  %>
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                  <% end %>
+            <%= link_to goal_path(goal),
+                  method: :delete,
+                  data: { confirm: "Are you sure?", commit: 'YES', cancel: 'NO'} do  %>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <h2>Accomplishments</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Goal</th>
+        <th scope="col">Accomplished on</th>
+        <th scope="col">Thoughts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @goals_completed.each do |goal| %>
+        <tr>
+          <td><%= goal.description %></td>
+          <td><%= goal.date %></td>
+          <td><%= goal.comment %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
