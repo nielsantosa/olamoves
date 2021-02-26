@@ -11,16 +11,18 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:new, :create, :destroy]
 
-  resources :purchases, only: [:show, :create] do
+  resources :purchases, only: [:index, :show, :create, :destroy] do
     resources :payments, only: [:new]
+    get '/payments/success', to: 'payments#success'
+    get '/payments/cancel', to: 'payments#cancel'
   end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   get '/cart', to: 'orders#checkout'
 
   get '/confirm', to: 'orders#confirm'
 
   get '/myprofile', to: 'pages#myprofile'
-
-  get '/payment', to: 'pages#payment'
 
 end

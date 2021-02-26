@@ -1,0 +1,19 @@
+<h1>Payment#cancel</h1>
+
+<h1>Sorry, Your payments not succeed yet!</h1>
+
+<% if @purchase_paid %>
+<%= @purchases_paid.state %>
+<% @purchase_paid.orders.each do |o| %>
+<%= o.video.title %><%= humanized_money_with_symbol o.video.price_cents %>
+<% end %>
+<% end %>
+
+<% if @purchase_pending %>
+<%= @purchases_pending.state %>
+<% @purchase_pending.orders.each do |o| %>
+<%= o.video.title %><%= humanized_money_with_symbol o.video.price_cents %>
+<% end %>
+<% end %>
+
+<%= link_to "Go back to carts", cart_path, class: "btn btn-primary"%>

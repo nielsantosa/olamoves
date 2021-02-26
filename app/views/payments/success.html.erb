@@ -1,0 +1,12 @@
+<h1>Payment#sucess</h1>
+
+<h1>You successfully bought the items!</h1>
+
+<% if @purchase %>
+<h2>Purchase status : <%= @purchase.state %><h2>
+<% @purchase.orders.each do |o| %>
+<h4><%= o.video.title %><%= humanized_money_with_symbol o.video.price_cents %></h4>
+<% end %>
+<% end %>
+
+<%= link_to "Go back to carts", cart_path, class: "btn btn-primary"%>
