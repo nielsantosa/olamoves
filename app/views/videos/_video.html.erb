@@ -1,7 +1,9 @@
 <div class="video-card">
-  <video controls autoplay src="<%= video.video_url %>" type="<%= video.video_type %>"> <!-- Showing the video type -->
+  <video controls src="<%= video.video_url %>" type="<%= video.video_type %>"> <!-- Showing the video type -->
     Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
   </video>
-  <h4><%= video.title %></h4>
+  <%= link_to video_path(video) do %>
+    <h4><%= video.title %></h4>
+  <% end %>
   <p>By who | <%= video.duration %> min | difficulty: <%= video.difficulty %></p>
 </div>

@@ -1,12 +1,17 @@
 .footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
   justify-content: center;
   background-color: #1EA896;
   font-size: 40px;
-  height: 200px;
 }
 
 .footer-word {
   font-size: 10px;
-  padding-right: 30px;
-  padding-top: -50px;
+  padding: 10px 0px;
+}
+
+.icons a {
+  margin: 0 50px;
 }

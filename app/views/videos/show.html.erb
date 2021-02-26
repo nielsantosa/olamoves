@@ -1,1 +1,35 @@
-<h1>Videos#show</h1>
+<div class="container">
+  <video controls width="100%" autoplay src="<%= @video.video_url %>" type="<%= @video_type %>">
+  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+  </video>
+</div>
+<br>
+<br>
+<div class="container">
+  <p class="type">Single Class</p>
+  <p class="class-title"><%=@video.title%></p>
+  <p class="instructor-name">Instructor name</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+      <p class="description-label">Duration</p>
+      <p class="description-label">Difficulty</p>
+      </div>
+      <div class="col">
+        <p class="run-time"><%= @video.duration %>mins</p>
+        <p class="difficulty"><%= @video.difficulty%></p>
+      </div>
+    </div>
+  </div>
+  <p class="description-text"><%=@video.description%></p>
+  <br>
+  <div class="btn-div">
+    <%= form_for @video, :url => orders_path, method: 'post' do |form| %>
+      <%= form.hidden_field :video, value: @video.id %>
+      <%= form.submit "Add to cart - $#{@video.price} ", :class => 'btn btn-primary btn-center' %>
+    <% end %>
+  </div>
+</div>
+
+
+

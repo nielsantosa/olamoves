@@ -4,11 +4,11 @@
       <%= render 'difficulty' %>
     </div>
     <div class="col-10 ">
-      <div class="video-grid shadow p-3 mb-5 bg-white rounded mt-5 ml-5">
+      <div class="video-grid shadow p-3 mb-5 bg-white rounded mt-4 ml-5">
         <% if @videos.first %>
-        <%= render @videos %>
+          <%= render @videos %>
         <% else %>
-        <h3>Cannot found any videos with <strong><%= @query %></strong>.</h3>
+          <h3>Cannot found any videos with <strong><%= @query %></strong>.</h3>
         <% end %>
       </div>
     </div>

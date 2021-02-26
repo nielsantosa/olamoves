@@ -11,12 +11,14 @@
   text-align: center;
   display: inline;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .search {
   border: grey;
   background: rgba(255,255,255,0.9);
   padding: 4px;
+  border-radius: 5px;
 
 }
 body {
@@ -56,8 +58,10 @@ body {
   top: 90px;
 }
 
+
 .carousel .carousel-indicators {
-  padding-top: 250px;
+  position: absolute;
+  top: 280px;
 }
 
 .carousel .carousel-indicators li {
@@ -76,6 +80,7 @@ body {
 .carousel-inner {
   width: 75% !important;
   margin: 0px auto;
+  position: relative;
 }
 
 .card {
