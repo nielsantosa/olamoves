@@ -1,6 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand", id: "logo-font" do %>
-    <h1>olamoves</h1>
+  <% if user_signed_in? %>
+     <%= link_to "olamoves", user_root_path, class: "logo-font" %>
+  <% else %>
+    <%= link_to "olamoves", root_path, class: "logo-font" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

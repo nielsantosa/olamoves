@@ -1,0 +1,280 @@
+<div class="style">
+  <p class="style-title">Style of the day</p>
+  <p class="user-style-header">Hot Hatha</p>
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls">
+      <a class="btn-floating left" href="#multi-item-example" data-slide="prev"><i class="fas fa-play"></i></a>
+      <a class="btn-floating right" href="#multi-item-example" data-slide="next"><i class="fas fa-play"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card align-items-center">
+              <video controls width="300" src="<%= @videos_one.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+
+              <div class="card-body">
+                <h4><%= link_to @videos_one.title, @videos_one, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_one.price %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_two.title, @videos_two, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_two.price %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_three.title, @videos_three, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_three.price %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_four.title, @videos_four, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_four.price %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_five.title, @videos_five, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_five.price %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_six.title, @videos_six, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_six.price %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Second slide-->
+
+      <!--Third slide-->
+      <div class="carousel-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_seven.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_seven.title, @videos_seven, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_seven.price %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_eight.title, @videos_eight, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_eight.price %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <video controls width="300" src="<%= @videos_nine.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+              <div class="card-body">
+                <h4><%= link_to @videos_nine.title, @videos_nine, class: "card-title" %></h4>
+                <p class="card-text">$<%= @videos_nine.price %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Third slide-->
+
+    </div>
+    <!--/.Slides-->
+    <!--Indicators-->
+    <div>
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+    </div>
+    <!--/.Indicators-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+  </div>
+
+
+<div class="container container-two">
+  <div class="row">
+    <div class="col-4">
+       <p class="session-text">You completed</p>
+       <p class="session-bold">1</p>
+       <p class="session-text">session this week.</p>
+       <p class="session-text">Keep it up!</p>
+    </div>
+    <div class="col-5">
+      <p class="user-header"><%= link_to "Goals", goals_path %></p>
+      <ul>
+      <% @goals.each do |goal| %>
+        <li><%= goal.description %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="col-3">
+      <p class="session-text">Take a breather</p>
+      <video controls width="250" autoplay src="<%= @video.video_url %> "> <!-- Showing the video type -->
+      Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+      </video>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-videos">
+  <div class=" container">
+    <div class="row">
+      <div class="col-sm">
+        <p class="user-header">Your all-time favourites!</p>
+        <table class="table-borderless">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">#1</th>
+              <td>
+                <video controls width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
+                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">#2</th>
+              <td>
+                <video controls width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
+                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">#3</th>
+              <td>
+                <video controls width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
+                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                </video>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm col-sm-border">
+        <p class="user-header">You might also like these</p>
+        <table class="table-borderless">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">#1</th>
+              <td>
+                <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
+                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                </video>
+              </td>
+              <td>Review</td>
+
+            </tr>
+            <tr>
+              <th scope="row">#2</th>
+              <td>
+                <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
+                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                </video>
+              </td>
+              <td>Review</td>
+
+            </tr>
+            <tr>
+              <th scope="row">#3</th>
+              <td>
+                <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
+                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+                </video>
+              </td>
+              <td>Review</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+   </div>
+  </div>
+

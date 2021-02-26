@@ -87,8 +87,12 @@ puts "Creating Users - start"
     puts "Creating unconfirmed orders - #{i}"
     Order.create!(video: chosen_video, user: user, confirmed: false)
   end
+
+  puts "Creating Unconfirmed Goals - start"
+  (1..4).to_a.each do |i|
+
+    puts "Creating unconfirmed goals - #{i}"
+    Goal.create!(user: user, description: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false))
+  end
 end
-
-
-
 puts "Finish seeding 🍑"

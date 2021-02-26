@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  get '/users' => 'pages#user', as: :user_root # creates user_root_path
+
   resources :videos, only: [:index, :show] do
     collection do
       get 'difficulty/:level', action: :difficulty, as: 'difficulty_filter'
@@ -20,4 +22,9 @@ Rails.application.routes.draw do
 
   post '/workout', to: 'pages#workout'
 
+  resources :goals do
+    member do
+      patch 'comment', action: :comment, as: 'comment'
+    end
+  end
 end
