@@ -37,6 +37,6 @@ class PagesController < ApplicationController
   end
 
   def instructors
-
+    @users = User.where(instructor: true)
   end
 end

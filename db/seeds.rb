@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Start seeding 🍑"
 
 puts "Cleaning users data 🧹"
@@ -18,9 +20,11 @@ puts "Creating instructors..."
   name = Faker::Name.name
   email = Faker::Internet.email
   password = "testtest"
-  # photo = Cloudinary::Uploader.upload('https://kitt.lewagon.com/placeholder/users/random')
   puts "Creating User #{name}"
   user = User.new(name: name, email: email, password: password, instructor: true)
+  file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
+  user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
+
   user.save!
 end
 
