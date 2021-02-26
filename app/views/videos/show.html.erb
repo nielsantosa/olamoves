@@ -29,8 +29,8 @@
       <%= form.submit "Add to cart - $#{@video.price} ", :class => 'btn btn-primary btn-center' %>
     <% end %>
   </div>
-  <div>
-    <%= render 'review' %>
+     <div>
+    <%= render 'review', video: @video %>
   </div>
 </div>
 

@@ -1,6 +1,6 @@
 class Video < ApplicationRecord
   has_many :orders
-
+  has_many :reviews
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
