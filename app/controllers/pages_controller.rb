@@ -35,4 +35,7 @@ class PagesController < ApplicationController
       order.video
     end
   end
+
+  def user
+  end
 end
