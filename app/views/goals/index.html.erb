@@ -1,51 +1,58 @@
-<h1>My Goals</h1>
+<h1 class="header">My Goals</h1>
 
 <div class="container">
-  <h2>New Goals</h2>
-  <%= simple_form_for @goal, :url => goals_path, method: 'post' do |f| %>
-    <%= f.input :description %>
-    <%= f.submit "New goal", :class => 'btn btn-primary' %>
-  <% end %>
-</div>
+  <div class="row">
+    <div class="col-8 goals-white ">
+      <h2>Current Goals</h2>
+      <table class="table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Goal</th>
+            <th scope="col">Goal set on</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @goals_current.each do |goal| %>
+            <tr>
+              <td>
+              <%= goal.description %>
 
-<div class="container">
-  <h2>Current Goals</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Curret Goals</th>
-        <th scope="col">Goal set on</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @goals_current.each do |goal| %>
-        <tr>
-          <td>
-          <%= goal.description %>
-
-          </td>
-          <td><%= goal.date %></td>
-          <td>
-            <%= link_to goal_path(goal),
-                  method: :patch,
-                  data: { confirm: "Completed?", commit: 'YES', cancel: 'NO'} do  %>
-                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                  <% end %>
-            <%= link_to goal_path(goal),
-                  method: :delete,
-                  data: { confirm: "Are you sure?", commit: 'YES', cancel: 'NO'} do  %>
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  <% end %>
-          </td>
-        </tr>
+              </td>
+              <td><%= goal.date %></td>
+              <td>
+                <%= link_to goal_path(goal),
+                      method: :patch,
+                      data: { confirm: "Completed?", commit: 'YES', cancel: 'NO'} do  %>
+                        <i class="fa fa-check-square" aria-hidden="true"></i>
+                      <% end %>
+                <%= link_to goal_path(goal),
+                      method: :delete,
+                      data: { confirm: "Are you sure?", commit: 'YES', cancel: 'NO'} do  %>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-1">
+    </div>
+    <div class="col new-goal">
+      <h2>New Goal</h2>
+      <%= simple_form_for @goal, :url => goals_path, method: 'post' do |f| %>
+      <%= f.input :description, label: false %>
+      <%= f.submit "New goal", :class => 'btn btn-primary' %>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+  </div>
 </div>
+<br>
+<br>
 <div class="container">
   <h2>Accomplishments</h2>
-  <table class="table">
+  <table class="table-borderless">
     <thead>
       <tr>
         <th scope="col">Goal</th>
@@ -58,7 +65,11 @@
         <tr>
           <td><%= goal.description %></td>
           <td><%= goal.date %></td>
-          <td><%= goal.comment %></td>
+           <td><%= goal.comment %></td>
+          <td><%= link_to edit_goal_path(goal) do  %>
+                        <i class="far fa-lightbulb"></i></i>
+                      <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -16,6 +16,11 @@ class GoalsController < ApplicationController
     redirect_to goals_path(@user)
   end
 
+  def edit
+    @user = current_user
+    @goal = Goal.find(params[:id])
+  end
+
   def update
     @user = current_user
     @goal = Goal.find(params[:id])
@@ -23,6 +28,17 @@ class GoalsController < ApplicationController
     @goal.date = Time.now
     @goal.save
     redirect_to goals_path(@user)
+  end
+
+  def comment
+    @user = current_user
+    @goal = Goal.find(params[:id])
+    @goal.comment = params.require(:goal).require(:comment)
+    if @goal.save
+      redirect_to goals_path(@user)
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   get '/payment', to: 'pages#payment'
 
-  resources :goals
-
+  resources :goals do
+    member do
+      patch 'comment', action: :comment, as: 'comment'
+    end
+  end
 end
