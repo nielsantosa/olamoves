@@ -39,9 +39,17 @@
   <div class="total-price p-4 my-3 rounded bg-white">
     <h3>TOTAL PRICE : SGD <%= @total_price %></h3>
   </div>
+
   <div class="total-price p-4 my-3 rounded bg-white">
     <%= link_to "PROCEED TO PAYMENT", payment_path, class: 'btn btn-primary' %>
   </div>
+
+  <%= form_tag orders_path do %>
+  <%= hidden_field_tag 'orders', @purchased_orders %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+
+<% end %>
 
 </div>
 

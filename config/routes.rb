@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :videos, only: [:index, :show]
 
   resources :orders, only: [:new, :create, :destroy]
+
+  resources :purchases, only: [:show, :create]
+
   get '/cart', to: 'orders#checkout'
 
   get '/myprofile', to: 'pages#myprofile'
