@@ -35,4 +35,9 @@ class PagesController < ApplicationController
       order.video
     end
   end
+
+  def workout
+    Workout.create(date: Time.now, user: current_user)
+    redirect_to myprofile_path
+  end
 end

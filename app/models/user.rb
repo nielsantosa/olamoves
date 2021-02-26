@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :videos, through: :orders
   has_many :purchases, through: :orders
+  has_many :workouts
 
   validates :name, presence: true
   has_one_attached :photo
