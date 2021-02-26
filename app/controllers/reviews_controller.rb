@@ -9,8 +9,11 @@ class ReviewsController < ApplicationController
     @video = Video.find(params[:video_id])
     @review.video = @video
     @review.user = current_user
-    @review.save
-    redirect_to video_path(@video)
+    if @review.save
+      redirect_to video_path(@video)
+    else
+      render :new
+    end
   end
 
   private
