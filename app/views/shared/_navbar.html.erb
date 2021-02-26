@@ -15,7 +15,9 @@
         <% end %>
       </li>
       <li class="nav-item active">
-        <a href="#"><h6>INSTRUCTORS</h6></a>
+        <%= link_to instructors_path do %>
+          <h6>INSTRUCTORS</h6>
+        <% end %>
       </li>
       <li class="nav-item active">
         <%= link_to cart_path do %>

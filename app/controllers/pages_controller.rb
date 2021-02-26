@@ -35,4 +35,8 @@ class PagesController < ApplicationController
       order.video
     end
   end
+
+  def instructors
+    @users = User.where(instructor: true)
+  end
 end
