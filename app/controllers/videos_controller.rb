@@ -16,4 +16,15 @@ class VideosController < ApplicationController
     @videos = Video.where(difficulty: params[:level])
     render :index
   end
+
+  def new
+    if current_user.instructor?
+      @video = Video.new
+      current_user = @video.user
+    end
+  end
+
+  def create
+
+  end
 end
