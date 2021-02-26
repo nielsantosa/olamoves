@@ -36,6 +36,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def workout
+    Workout.create(date: Time.now, user: current_user)
+    redirect_to user_root_path
+  end
+
   def user
     @videos = Video.all.sort_by(&:created_at).reverse
     @videos_one = @videos[0]
@@ -52,6 +57,7 @@ class PagesController < ApplicationController
 
     @video = @videos[9]
 
+    @workout  = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
   def instructors
     @users = User.where(instructor: true)
   end
