@@ -42,9 +42,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_062106) do
     t.bigint "video_id"
     t.bigint "user_id"
     t.bigint "purchase_id"
-    t.string "state"
-    t.integer "amount_cents", default: 0, null: false
-    t.string "checkout_session_id"
+    t.boolean "confirmed", default: false
     t.index ["purchase_id"], name: "index_orders_on_purchase_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
     t.index ["video_id"], name: "index_orders_on_video_id"
