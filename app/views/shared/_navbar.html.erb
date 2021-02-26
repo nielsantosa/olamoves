@@ -27,7 +27,7 @@
       <% if user_signed_in? %>
         <li class="nav-item active">
           <%= form_tag workout_path, method: :post do %>
-            <%= submit_tag "Did a workout!", class: "btn btn-primary" %>
+            <%= submit_tag "Did a workout!", class: "btn btn-primary btn-navbar" %>
           <% end %>
         </li>
       <% end %>
