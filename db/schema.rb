@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_123646) do
-ActiveRecord::Schema.define(version: 2021_02_26_061348) do
+ActiveRecord::Schema.define(version: 2021_02_26_062106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,9 +60,13 @@ ActiveRecord::Schema.define(version: 2021_02_26_061348) do
   end
 
   create_table "purchases", force: :cascade do |t|
-    t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_price_cents", default: 0, null: false
+    t.bigint "user_id"
+    t.string "checkout_session_id"
+    t.string "state"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,13 +86,13 @@ ActiveRecord::Schema.define(version: 2021_02_26_061348) do
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "price"
     t.integer "difficulty"
     t.integer "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "video_url"
     t.string "video_type"
+    t.integer "price_cents", default: 0, null: false
     t.integer "user_id"
   end
 
@@ -106,5 +109,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_061348) do
   add_foreign_key "orders", "purchases"
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "videos"
+  add_foreign_key "purchases", "users"
   add_foreign_key "videos", "users"
 end

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
   has_many :videos, through: :orders
-  has_many :purchases, through: :orders
+  has_many :purchases
   has_many :workouts
   has_many :goals, dependent: :destroy
   has_many :videos, dependent: :destroy

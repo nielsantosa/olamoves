@@ -2,17 +2,17 @@ require "open-uri"
 
 puts "Start seeding 🍑"
 
+puts "Cleaning orders data 🧹"
+Order.destroy_all
+
+puts "Cleaning purchases data 🧹"
+Purchase.destroy_all
+
 puts "Cleaning users data 🧹"
 User.destroy_all
 
 puts "Cleaning videos data 🧹"
 Video.destroy_all
-
-puts "Cleaning purchases data 🧹"
-Purchase.destroy_all
-
-puts "Cleaning orders data 🧹"
-Order.destroy_all
 
 puts "Creating instructors..."
 
@@ -92,10 +92,8 @@ puts "Creating Users - start"
   (1..3).to_a.each do |i|
     selected_videos, chosen_video = generate_video(selected_videos)
 
-    purchase = Purchase.create!
-
     puts "Creating confirmed orders - #{i}"
-    Order.create!(video: chosen_video, user: user, confirmed: true, purchase: purchase)
+    Order.create!(video: chosen_video, user: user, confirmed: true)
   end
   puts "Creating Unconfirmed Orders - start"
   (1..4).to_a.each do |i|
