@@ -12,6 +12,17 @@ Purchase.destroy_all
 puts "Cleaning orders data 🧹"
 Order.destroy_all
 
+puts "Creating instructors..."
+
+5.times do
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  password = "testtest"
+  puts "Creating User #{name}"
+  user = User.new(name: name, email: email, password: password, instructor: true)
+  user.save!
+end
+
 def generate_pexel_video
   pexels_key = "563492ad6f9170000100000138c8f4c57b1c4c69a53d72daaeb561d3" # Your authentication key
   client = Pexels::Client.new(pexels_key) # Set up the client
@@ -56,7 +67,8 @@ puts "Generating Videos - start"
     difficulty: difficulty,
     duration: duration,
     video_url: video_url,
-    video_type: video_type)
+    video_type: video_type,
+    user: User.where(instructor: true).sample)
 end
 
 puts "Creating Users - start"
@@ -88,7 +100,6 @@ puts "Creating Users - start"
     Order.create!(video: chosen_video, user: user, confirmed: false)
   end
 end
-
 
 
 puts "Finish seeding 🍑"
