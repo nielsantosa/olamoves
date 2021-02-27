@@ -16,4 +16,26 @@ class VideosController < ApplicationController
     @videos = Video.where(difficulty: params[:level])
     render :index
   end
+
+  def new
+    if current_user.instructor?
+      @video = Video.new
+      current_user = @video.user
+    end
+  end
+
+  def create
+    @video = Video.new(video_params)
+    if @video.save
+      redirect_to video_path(@video)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def video_params
+    params.require(:video).permit(:title, :description, :difficulty, :duration, :video_url, :video_type, :price_cents, :user_id)
+  end
 end

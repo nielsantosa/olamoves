@@ -1,0 +1,27 @@
+<div class="container my-3">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h2 style='text-align: center'>UPLOAD VIDEO</h2>
+
+      <%= simple_form_for @video do |f| %>
+
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :difficulty, collection: 1..5 %>
+        <%= f.input :duration, hint: 'In minutes' %>
+        <%= f.input :video_url %>
+        <%= f.input :video_type, hint: '.MP4, .MOV, .AVI, or others' %>
+        <%= f.input :price_cents, label: 'Price' %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+      </div>
+
+      <div class="form-actions my-20">
+        <%= f.button :submit, "Upload Video", class: 'btn btn-primary btn-block' %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
