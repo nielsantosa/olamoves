@@ -1,0 +1,9 @@
+<h1>List of your purchases</h1>
+
+<% if @purchases %>
+<% @purchases.each do |purchase| %>
+<div><%= purchase.id %> </div>
+<div><%= purchase.state %> </div>
+<br>
+<% end %>
+<% end %>

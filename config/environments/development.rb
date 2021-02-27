@@ -61,5 +61,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
+  # lets ngrok open a tunnel that is trusted by Rails
+  config.hosts << /.+\.ngrok.io/
 end
