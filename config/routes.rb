@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/users' => 'pages#user', as: :user_root # creates user_root_path
 
-  resources :videos, only: [:index, :show, :new, :create] do
+  resources :videos do
     collection do
       get 'difficulty/:level', action: :difficulty, as: 'difficulty_filter'
     end

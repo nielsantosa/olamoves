@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_action :set_video, only: [:show, :edit, :update, :destroy]
+
   def index
     # show all the videos
     if @query = params[:search]
@@ -9,7 +11,6 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
   end
 
   def difficulty
@@ -33,7 +34,34 @@ class VideosController < ApplicationController
     end
   end
 
+  def edit
+    if @video.user == current_user
+      render :edit
+    else
+      redirect_to myprofile_path
+      flash.alert = 'You cannot edit this video'
+    end
+  end
+
+  def update
+    if @video.user_id == current_user.id && @video.update(video_params)
+      redirect_to video_path(@video)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @video.destroy
+      redirect_to myprofile_path
+    end
+  end
+
   private
+
+  def set_video
+    @video = Video.find(params[:id])
+  end
 
   def video_params
     params.require(:video).permit(:title, :description, :difficulty, :duration, :video_url, :video_type, :price_cents, :user_id)
