@@ -1,6 +1,7 @@
 <div class="review-portion">
   <h1>Reviews
   <%= link_to "Add a Review", new_video_review_path(video), class: 'btn btn-primary' %>
+  <%# <%= link_to "delete",video_path(video), video_review_path %> %>
   </h1>
   <% @video.reviews.each do |review| %>
     <div class="review-container">

@@ -1,9 +1,11 @@
-<h1>Create New Review</h1>
-<div class="new-review-page">
-<%= simple_form_for [@video, @review] do |f| %>
-        <%= f.input :comment %>
-        <%= f.input :rating, collection: 1..5 %>
-        <%= f.button :submit, class: 'btn btn-secondary' %>
-      <% end %>
-<br>
+<div class="new-review-container">
+  <h1>Create New Review</h1>
+  <div class="new-review-page">
+  <%= simple_form_for [@video, @review] do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating, collection: 1..5 %>
+          <%= f.button :submit, class: 'btn btn-secondary' %>
+        <% end %>
+  <br>
+  </div>
 </div>
