@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(version: 2021_02_26_123646) do
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "user_id", null: false
+    t.text "comment"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["video_id"], name: "index_reviews_on_video_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -109,6 +120,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_123646) do
   add_foreign_key "orders", "purchases"
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "videos"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "videos"
   add_foreign_key "purchases", "users"
   add_foreign_key "videos", "users"
 end

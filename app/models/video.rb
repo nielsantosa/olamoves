@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
   has_many :orders
+  has_many :reviews
   belongs_to :user
 
   validates :title, presence: true
