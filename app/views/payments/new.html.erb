@@ -24,6 +24,7 @@
       <script>
         const paymentButton = document.getElementById('pay');
         paymentButton.addEventListener('click', () => {
+          <% @purchase.update!(state: 'pending') %>
           const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
           stripe.redirectToCheckout({
             sessionId: '<%= @purchase.checkout_session_id %>'

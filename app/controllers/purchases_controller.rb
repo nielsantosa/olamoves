@@ -1,10 +1,19 @@
 class PurchasesController < ApplicationController
-
   def index
     @purchases = Purchase.where(user: current_user)
   end
 
   def create
+    # Clean all purchases that is pending
+    @purchases = current_user.purchases.where(state: 'unsend')
+    @purchases.each do |purchase|
+      purchase.orders.each do |order|
+        order.purchase = nil
+        order.save
+      end
+      purchase.destroy
+    end
+
     orders = current_user.orders.where(confirmed: false)
 
     total_price = 0
@@ -12,7 +21,7 @@ class PurchasesController < ApplicationController
       total_price += order.video.price_cents
     end
 
-    purchase = Purchase.create!(total_price_cents: total_price, user: current_user, state: 'pending')
+    purchase = Purchase.create!(total_price_cents: total_price, user: current_user, state: 'unsend')
 
     purchase.orders.concat(orders)
 
@@ -46,12 +55,14 @@ class PurchasesController < ApplicationController
   def serialize(orders)
     new_array = []
     orders.each_with_object(new_array) do |order, new_array|
-      new_array.push({
+      new_array.push(
+        {
           name: order.video.title,
           amount: order.video.price_cents,
           currency: 'sgd',
           quantity: 1
-    })
+        }
+      )
     end
   end
 end
