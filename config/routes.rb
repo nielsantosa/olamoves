@@ -37,4 +37,5 @@ Rails.application.routes.draw do
     end
   end
   get '/instructors', to: 'pages#instructors'
+  get 'instructors/:id', to: 'pages#instructorvideos', as: 'instructor_videos'
 end
