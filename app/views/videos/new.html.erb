@@ -13,6 +13,8 @@
         <%= f.input :video_url %>
         <%= f.input :video_type, hint: '.MP4, .MOV, .AVI, or others' %>
         <%= f.input :price_cents, label: 'Price' %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
       </div>
 
       <div class="form-actions my-20">
