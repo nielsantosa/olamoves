@@ -4,12 +4,20 @@
       <h1>Checkout summary</h1>
       <% @purchase.orders.each_with_index do |order, index| %>
       <div class="d-flex justify-content-between align-items-center p-4 my-3 bg-white rounded">
-      <%= index + 1 %>.
-      <video controls width="200" src="<%= order.video.video_url %>" type="<%= order.video.video_type %>"> <!-- Showing the video type -->
+        <div>
+          <%= index + 1 %>.
+        </div>
+        <div>
+          <video controls width="200" src="<%= order.video.video_url %>" type="<%= order.video.video_type %>"> <!-- Showing the video type -->
             Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-      </video>
-      <p><strong><%= order.video.title %></strong></p>
-      <p><strong><%= humanized_money_with_symbol @purchase.total_price %></strong></p>
+          </video>
+        </div>
+        <div>
+          <p><strong><%= order.video.title %></strong></p>
+        </div>
+        <div>
+          <p><strong><%= humanized_money_with_symbol @purchase.total_price %></strong></p>
+        </div>
       </div>
       <% end %>
       <div class = "p-4 my-2 bg-white text-right rounded">
@@ -17,21 +25,24 @@
       </div>
 
       <div class = "text-right">
-      <button id="pay" class="btn btn-primary my-2">Pay</button>
+        <button id="pay" class="btn btn-primary my-2">Pay</button>
 
-      <!-- # Commented for the lecture, remove comments. -->
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @purchase.checkout_session_id %>'
+        <!-- # Commented for the lecture, remove comments. -->
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            <%# Create session only when you click the "Pay" button%>
+            <% create_session(purchase: @purchase) %>
+
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @purchase.checkout_session_id %>'
+            });
           });
-        });
 
-      </script>
-      <%= link_to "Cancel Payment", purchase_path(@purchase), method: :delete, class: "btn btn-primary my-2" %>
+        </script>
+        <%= link_to "Cancel Payment", purchase_path(@purchase), method: :delete, class: "btn btn-primary my-2" %>
       </div>
     </div>
   </div>
