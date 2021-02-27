@@ -3,7 +3,7 @@
     Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
   </video>
   <%= link_to video_path(video) do %>
-    <h4><%= video.title %></h4>
+    <h4 class="vid-title"><%= video.title %></h4>
   <% end %>
-  <p>By <%= video.user.name %> | <%= video.duration %> min | Difficulty: <%= video.difficulty %></p>
+  <p class="vid-details">By <%= video.user.name %> | <%= video.duration %> min | Difficulty: <%= video.difficulty %></p>
 </div>
