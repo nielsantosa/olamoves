@@ -17,10 +17,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
+    @video = Video.find(params[:video_id])
+    @review_id = @video.review_ids.first
+    @review = Review.find(@review_id)
     @review.destroy
     redirect_to video_path(@video)
-    raise
   end
 
   private

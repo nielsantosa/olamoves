@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:create, :new, :destroy]
   end
-
   resources :orders, only: [:new, :create, :destroy]
   get '/cart', to: 'orders#checkout'
 
