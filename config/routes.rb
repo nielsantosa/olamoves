@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/users' => 'pages#user', as: :user_root # creates user_root_path
+  get '/dashboard' => 'pages#user', as: :user_root # creates user_root_path
 
   resources :videos do
     collection do
