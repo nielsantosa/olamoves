@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_123646) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "video_url"
     t.string "video_type"
-    t.integer "user_id"
     t.integer "price_cents", default: 0, null: false
+    t.integer "user_id"
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -120,8 +120,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_123646) do
   add_foreign_key "orders", "purchases"
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "videos"
+  add_foreign_key "purchases", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "videos"
-  add_foreign_key "purchases", "users"
   add_foreign_key "videos", "users"
 end
