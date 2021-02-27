@@ -1,0 +1,24 @@
+<div class="container justify-content-around">
+  <div class="row">
+    <div style="margin: 8px auto;">
+      <%= cl_image_tag @user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge' %>
+      <h5 style="text-align: center; padding-top: 10px"><%= @user.name %></h5>
+    </div>
+    <div class="col-12 ">
+      <div class="video-grid shadow p-3 mb-5 bg-white rounded mt-4 ml-5">
+        <% @videos.each do |vid| %>
+          <div class="video-card">
+            <video controls src="<%= vid.video_url %>" type="<%= vid.video_type %>">
+              Sorry, your browser doesn't support embedded videos.
+            </video>
+            <%= link_to video_path(vid) do %>
+              <h5 style="text-align: center; padding-top: 10px;"><%= vid.title %></h5>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to 'Back to Instructors', instructors_path, class: 'btn btn-primary my-10' %>
+    </div>
+  </div>
+</div>
+

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :instructors, :instructorvideos]
 
   def home
     @videos = Video.all.sort_by(&:created_at).reverse
@@ -59,7 +59,13 @@ class PagesController < ApplicationController
 
     @workout  = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
   end
+
   def instructors
     @users = User.where(instructor: true)
+  end
+
+  def instructorvideos
+    @user = User.find(params[:id])
+    @videos = @user.videos
   end
 end
