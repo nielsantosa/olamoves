@@ -5,5 +5,5 @@
   <%= link_to video_path(video) do %>
     <h4><%= video.title %></h4>
   <% end %>
-  <p>By who | <%= video.duration %> min | difficulty: <%= video.difficulty %></p>
+  <p>By <%= video.user.name %> | <%= video.duration %> min | Difficulty: <%= video.difficulty %></p>
 </div>

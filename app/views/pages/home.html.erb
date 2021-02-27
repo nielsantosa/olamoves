@@ -39,6 +39,7 @@
 
               <div class="card-body">
                 <h4><%= link_to @videos_one.title, @videos_one, class: "card-title" %></h4>
+                <p>By <%= @videos_one.user.name %> </p>
                 <p class="card-text">$<%= @videos_one.price %></p>
               </div>
             </div>
@@ -51,6 +52,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_two.title, @videos_two, class: "card-title" %></h4>
+                <p>By <%= @videos_two.user.name %> </p>
                 <p class="card-text">$<%= @videos_two.price %></p>
               </div>
             </div>
@@ -63,6 +65,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_three.title, @videos_three, class: "card-title" %></h4>
+                <p>By <%= @videos_three.user.name %> </p>
                 <p class="card-text">$<%= @videos_three.price %></p>
               </div>
             </div>
@@ -83,6 +86,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_four.title, @videos_four, class: "card-title" %></h4>
+                <p>By <%= @videos_four.user.name %> </p>
                 <p class="card-text">$<%= @videos_four.price %></p>
               </div>
             </div>
@@ -95,6 +99,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_five.title, @videos_five, class: "card-title" %></h4>
+                <p>By <%= @videos_five.user.name %> </p>
                 <p class="card-text">$<%= @videos_five.price %></p>
               </div>
             </div>
@@ -107,6 +112,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_six.title, @videos_six, class: "card-title" %></h4>
+                <p>By <%= @videos_six.user.name %> </p>
                 <p class="card-text">$<%= @videos_six.price %></p>
               </div>
             </div>
@@ -127,6 +133,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_seven.title, @videos_seven, class: "card-title" %></h4>
+                <p>By <%= @videos_seven.user.name %> </p>
                 <p class="card-text">$<%= @videos_seven.price %></p>
               </div>
             </div>
@@ -139,6 +146,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_eight.title, @videos_eight, class: "card-title" %></h4>
+                <p>By <%= @videos_eight.user.name %> </p>
                 <p class="card-text">$<%= @videos_eight.price %></p>
               </div>
             </div>
@@ -151,6 +159,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_nine.title, @videos_nine, class: "card-title" %></h4>
+                <p>By <%= @videos_nine.user.name %> </p>
                 <p class="card-text">$<%= @videos_nine.price %></p>
               </div>
             </div>
@@ -164,7 +173,7 @@
     <!--/.Slides-->
     <!--Indicators-->
     <div>
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" style="margin-top: 24px;">
         <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
         <li data-target="#multi-item-example" data-slide-to="1"></li>
         <li data-target="#multi-item-example" data-slide-to="2"></li>
@@ -208,6 +217,7 @@
 
               <div class="card-body">
                 <h4><%= link_to @videos_one_p.title, @videos_one_p, class: "card-title" %></h4>
+                <p>By <%= @videos_one_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_one_p.price %></p>
               </div>
             </div>
@@ -220,6 +230,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_two_p.title, @videos_two_p, class: "card-title" %></h4>
+                <p>By <%= @videos_two_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_two_p.price %></p>
               </div>
             </div>
@@ -232,6 +243,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_three_p.title, @videos_three_p, class: "card-title" %></h4>
+                <p>By <%= @videos_three_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_three_p.price %></p>
               </div>
             </div>
@@ -252,6 +264,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_four_p.title, @videos_four_p, class: "card-title" %></h4>
+                <p>By <%= @videos_four_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_four_p.price %></p>
               </div>
             </div>
@@ -264,6 +277,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_five_p.title, @videos_five_p, class: "card-title" %></h4>
+                <p>By <%= @videos_five_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_five_p.price %></p>
               </div>
             </div>
@@ -276,6 +290,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_six_p.title, @videos_six_p, class: "card-title" %></h4>
+                <p>By <%= @videos_six_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_six_p.price %></p>
               </div>
             </div>
@@ -296,6 +311,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_seven_p.title, @videos_seven_p, class: "card-title" %></h4>
+                <p>By <%= @videos_seven_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_seven_p.price %></p>
               </div>
             </div>
@@ -308,6 +324,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_eight_p.title, @videos_eight_p, class: "card-title" %></h4>
+                <p>By <%= @videos_eight_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_eight_p.price %></p>
               </div>
             </div>
@@ -320,6 +337,7 @@
               </video>
               <div class="card-body">
                 <h4><%= link_to @videos_nine_p.title, @videos_nine_p, class: "card-title" %></h4>
+                <p>By <%= @videos_nine_p.user.name %> </p>
                 <p class="card-text">$<%= @videos_nine_p.price %></p>
               </div>
             </div>
@@ -333,7 +351,7 @@
     <!--/.Slides-->
     <!--Indicators-->
     <div>
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" style="margin-top: 24px;">
         <li data-target="#multi-item-example2" data-slide-to="0" class="active"></li>
         <li data-target="#multi-item-example2" data-slide-to="1"></li>
         <li data-target="#multi-item-example2" data-slide-to="2"></li>
