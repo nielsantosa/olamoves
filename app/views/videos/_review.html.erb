@@ -14,10 +14,11 @@
               <img src="http://simpleicon.com/wp-content/uploads/multy-user-256x256.png" alt="standardPic">
             <% end %>
             <h2> <%= review.user.name %> </h2>
-            <%= review.id %>
-            <%= link_to review_path(review), method: "delete" do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
+            <div class="trash-icon">
+              <%= link_to review_path(review), method: "delete" do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </div>
           </div>
           <div class="rating-stars d-flex pt-2">
           <% review.rating.times do  %>
