@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     collection do
       get 'difficulty/:level', action: :difficulty, as: 'difficulty_filter'
     end
-    resources :reviews, only: [:create, :new, :destroy]
+    resources :reviews, only: [:create, :new]
   end
+
+  resources :reviews, only: [:destroy]
+
   resources :orders, only: [:new, :create, :destroy]
   get '/cart', to: 'orders#checkout'
 

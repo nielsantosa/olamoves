@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @review.video = @video
     @review.user = current_user
     if @review.save
+      @current_review = @review
       redirect_to video_path(@video)
     else
       render :new
@@ -17,11 +18,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @video = Video.find(params[:video_id])
-    @review_id = @video.review_ids.first
-    @review = Review.find(@review_id)
+    @review = Review.find(params[:id])
     @review.destroy
-    redirect_to video_path(@video)
+    redirect_to video_path(@review.video)
   end
 
   private
