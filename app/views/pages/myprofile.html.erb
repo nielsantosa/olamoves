@@ -33,7 +33,7 @@
               <%= link_to edit_video_path(vid), style: 'margin-right: 32px;' do %>
                 <i class="fas fa-pen"></i>
               <% end %>
-              <%= link_to myprofile_path, method: :delete, data: { confirm: "Do you want to permanently delete #{vid.title}?" } do %>
+              <%= link_to video_path(vid), method: :delete, data: { confirm: "Do you want to permanently delete #{vid.title}?" } do %>
                 <i class="fas fa-trash"></i>
               <% end %>
             </div>
