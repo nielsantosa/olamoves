@@ -55,9 +55,15 @@ class PagesController < ApplicationController
     user = current_user
     @goals = Goal.where(user: user, completed: false)
 
-    @video = @videos[9]
+    @video = @videos[8]
 
-    @workout  = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
+    @workout = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
+    @workout = 0 if @workout.nil?
+
+    v =  @videos_three.reviews.sort_by(&:rating)
+    p v
+    raise
+
   end
 
   def instructors

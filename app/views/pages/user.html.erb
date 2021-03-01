@@ -178,12 +178,27 @@
   <div class="row">
     <div class="col-4">
        <p class="session-text">You completed</p>
-       <p class="session-bold"><%= @workout %></p>
-       <p class="session-text">session this week.</p>
-       <p class="session-text">Keep it up!</p>
+       <% case @workout %>
+       <% when 0 %>
+        <p class="session-bold">0</p>
+        <p class="session-text">workout this week.</p>
+        <p class="session-text">Time to start!</p>
+      <% when 1 %>
+        <p class="session-bold"><%= @workout %></p>
+        <p class="session-text">workout this week.</p>
+        <p class="session-text">Keep it up!</p>
+      <% else %>
+        <p class="session-bold"><%= @workout %></p>
+        <p class="session-text">workouts this week.</p>
+        <p class="session-text">Keep it up!</p>
+      <% end %>
+
     </div>
     <div class="col-5">
       <p class="user-header"><%= link_to "Goals", goals_path %></p>
+      <% if @goals == [] %>
+        <p> No goals set </p>
+      <% end %>
       <ul>
       <% @goals.each do |goal| %>
         <li><%= goal.description %></li>
@@ -252,17 +267,16 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">#1</th>
               <td>
                 <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
-              <td>Review</td>
+              <td><%= @c %></td>
+
 
             </tr>
             <tr>
-              <th scope="row">#2</th>
               <td>
                 <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
@@ -272,7 +286,6 @@
 
             </tr>
             <tr>
-              <th scope="row">#3</th>
               <td>
                 <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
