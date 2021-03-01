@@ -6,6 +6,7 @@
     <%= f.input :difficulty, collection: 1..5 %>
     <%= f.input :duration, hint: 'In minutes' %>
     <%= f.input :id_vid, label: 'Pexel Video ID' %>
+    <%= f.input :price %>
     <%= f.hidden_field :user_id, value: current_user.id %>
 
   </div>
