@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="instructor-box">
+    <% @users.each do |user| %>
+      <div style="text-align:center;">
+        <%= cl_image_tag user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge', style: 'margin: 8px auto;' %>
+        <p><%= user.name %></p>
+        <%= link_to instructor_videos_path(user) do %>
+          <p>Number of videos: <%= user.videos.count %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

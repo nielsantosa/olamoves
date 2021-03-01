@@ -12,22 +12,74 @@
     <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %>
   </div>
 </div>
-<div class="container">
-  <div class="video-container my-10">
-    <h3>My Videos</h3>
-    <div class="vid-grid">
-      <% @purchased_videos.each do |vid| %>
-        <div>
-          <video controls width="400" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-          <%= link_to video_path(vid) do %>
-            <h5><%= vid.title %></h5>
+
+<!-- if instructor-->
+<% if @user.instructor? %>
+
+  <div class="container">
+    <div class="video-container my-10">
+      <h3>My Published Videos</h3>
+        <%= link_to 'Upload a video', new_video_path , class: 'btn btn-primary', style: 'display: inline-block' %>
+        <div class="vid-grid">
+          <% @user.videos.each do |vid| %>
+            <div>
+              <video controls width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <%= link_to video_path(vid) do %>
+                <h5><%= vid.title %></h5>
+                <p>By <%= vid.user.name %> </p>
+              <% end %>
+              <%= link_to edit_video_path(vid), style: 'margin-right: 32px;' do %>
+                <i class="fas fa-pen"></i>
+              <% end %>
+              <%= link_to myprofile_path, method: :delete, data: { confirm: "Do you want to permanently delete #{vid.title}?" } do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </div>
           <% end %>
         </div>
-
-      <% end %>
     </div>
   </div>
-</div>
 
+  <div class="container">
+    <div class="video-container my-10">
+      <h3>My Purchased Videos</h3>
+      <div class="vid-grid">
+        <% @purchased_videos.each do |vid| %>
+          <div>
+            <video controls width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+              Sorry, your browser doesn't support embedded videos.
+            </video>
+            <%= link_to video_path(vid) do %>
+              <h5><%= vid.title %></h5>
+              <p>By <%= vid.user.name %> </p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <!-- if not instructor-->
+  <div class="container">
+    <div class="video-container my-10">
+      <h3>My Purchased Videos</h3>
+      <div class="vid-grid">
+        <% @purchased_videos.each do |vid| %>
+          <div>
+            <video controls width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+              Sorry, your browser doesn't support embedded videos.
+            </video>
+            <%= link_to video_path(vid) do %>
+              <h5><%= vid.title %></h5>
+              <p>By <%= vid.user.name %> </p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

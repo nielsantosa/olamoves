@@ -123,5 +123,9 @@ ActiveRecord::Schema.define(version: 2021_02_26_123646) do
   add_foreign_key "purchases", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "videos"
+<<<<<<< HEAD
+=======
+  add_foreign_key "purchases", "users"
+>>>>>>> c34d1da73612c1fc9c04ced5dcd92579c6c35b04
   add_foreign_key "videos", "users"
 end

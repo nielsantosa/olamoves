@@ -17,7 +17,11 @@ class OrdersController < ApplicationController
     video = Video.find(video_id)
     order = Order.new(user: current_user, confirmed: false)
     order.video = video
-    if order.save
+    if video.user_id == current_user.id
+      redirect_to video_path(video)
+      flash.alert = "You own this video"
+    elsif
+      order.save
       redirect_to cart_path
       flash.alert = "Successfully added to cart"
     else
