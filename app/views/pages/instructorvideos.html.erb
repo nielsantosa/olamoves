@@ -9,7 +9,7 @@
       <h5 style="text-align: center; padding-top: 10px"><%= @user.name %></h5>
     </div>
     <div class="col-12 ">
-      <div class="video-grid shadow p-3 mb-5 bg-white rounded mt-4 ml-5">
+      <div class="video-grid shadow p-3 mb-5 bg-white rounded mt-4">
         <% if @user.videos == [] %>
           <%= 'This instructor has not uploaded any videos.' %>
         <% else %>
@@ -25,7 +25,9 @@
           <% end %>
         <% end %>
       </div>
-      <%= link_to 'Back to Instructors', instructors_path, class: 'btn btn-primary' %>
+      <div class="my-3">
+        <%= link_to 'Back to List of Instructors', instructors_path %>
+      </div>
     </div>
   </div>
 </div>
