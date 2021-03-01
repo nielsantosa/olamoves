@@ -1,3 +1,5 @@
+require 'pexels'
+
 class VideosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
@@ -28,7 +30,17 @@ class VideosController < ApplicationController
   end
 
   def create
+    client = Pexels::Client.new(ENV['PEXELS_KEY'])
+    id_vid = params[:video][:id_vid]
+    json_parsed = client.videos[id_vid]
+    video_details = json_parsed.files[1]
+    video_url = video_details.link
+    video_type = video_details.file_type
+
     @video = Video.new(video_params)
+    @video.video_url = video_url
+    @video.video_type = video_type
+
     if @video.save
       redirect_to video_path(@video)
     else
@@ -66,6 +78,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :difficulty, :duration, :video_url, :video_type, :price_cents, :user_id)
+    params.require(:video).permit(:title, :description, :difficulty, :duration, :prices, :user_id)
   end
 end
