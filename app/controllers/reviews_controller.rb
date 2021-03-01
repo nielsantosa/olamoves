@@ -9,6 +9,11 @@ class ReviewsController < ApplicationController
     @video = Video.find(params[:video_id])
     @review.video = @video
     @review.user = current_user
+    raise
+    # check if current_user.order.video == @video
+    # check if current_user.order.confirmed == true
+    # if both pass, then savecurrent_
+
     if @review.save
       @current_review = @review
       redirect_to video_path(@video)
