@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_072117) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "video_url"
     t.string "video_type"
-    t.integer "user_id"
     t.integer "price_cents", default: 0, null: false
+    t.integer "user_id"
     t.bigint "id_vid"
   end
 
