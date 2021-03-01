@@ -15,7 +15,7 @@
         <% else %>
           <% @videos.each do |vid| %>
             <div class="video-card">
-              <video controls src="<%= vid.video_url %>" type="<%= vid.video_type %>">
+              <video muted src="<%= vid.video_url %>" type="<%= vid.video_type %>">
                 Sorry, your browser doesn't support embedded videos.
               </video>
               <%= link_to video_path(vid) do %>
