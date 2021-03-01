@@ -53,6 +53,7 @@ def generate_pexel_video
   # [video_url, video_type]
 end
 
+
 def generate_video(selected_videos)
   chosen_video = Video.all.sample
 

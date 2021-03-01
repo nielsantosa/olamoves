@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
     @goal.user = current_user
     @goal.date = Time.now
     @goal.save
-    redirect_to goals_path(@user)
+    redirect_to goals_path
   end
 
   def edit
@@ -27,7 +27,7 @@ class GoalsController < ApplicationController
     @goal.completed = true
     @goal.date = Time.now
     @goal.save
-    redirect_to goals_path(@user)
+    redirect_to goals_path
   end
 
   def comment
@@ -35,7 +35,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @goal.comment = params.require(:goal).require(:comment)
     if @goal.save
-      redirect_to goals_path(@user)
+      redirect_to goals_path
     else
       render :edit
     end
@@ -44,6 +44,6 @@ class GoalsController < ApplicationController
   def destroy
     @goal = Goal.find(params[:id])
     @goal.destroy
-    redirect_to goals_path(@user)
+    redirect_to goals_path
   end
 end

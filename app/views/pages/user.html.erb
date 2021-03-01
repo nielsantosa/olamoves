@@ -206,8 +206,8 @@
       </ul>
     </div>
     <div class="col-3">
-      <p class="session-text">Take a breather</p>
-      <video controls width="250" autoplay src="<%= @video.video_url %> "> <!-- Showing the video type -->
+      <p class="user-header" style="font-size: 24px; text-align: center;">Take a Breather</p>
+      <video controls width="100%" autoplay src="<%= @video_url %> "> <!-- Showing the video type -->
       Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
       </video>
     </div>
@@ -217,98 +217,98 @@
 
 
 <div class="container-videos">
-  <div class=" container">
-    <div class="row">
-      <div class="col-sm">
-        <p class="user-header">Your all-time favourites!</p>
-        <table class="table-borderless">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">#1</th>
-              <td>
-                <video controls width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
-                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-                </video>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">#2</th>
-              <td>
-                <video controls width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
-                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-                </video>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">#3</th>
-              <td>
-                <video controls width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
-                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-                </video>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-sm col-sm-border">
-        <p class="user-header">You might also like these</p>
-        <table class="table-borderless">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
-                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-                </video>
-              </td>
-              <td>"<%= @videos_three.reviews.sort_by(&:rating).reverse!.first.comment %>"
-              <BR>
-              <BR>
-              <span style="font-weight: bold;">Rating: <%= @videos_three.reviews.sort_by(&:rating).reverse!.first.rating %></span>
-              </td>
-
-
-            </tr>
-            <tr>
-              <td>
-                <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
-                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-                </video>
-              </td>
-              <td>"<%= @videos_five.reviews.sort_by(&:rating).reverse!.first.comment %>"
-              <BR>
-              <BR>
-              <span style="font-weight: bold;">Rating: <%= @videos_five.reviews.sort_by(&:rating).reverse!.first.rating %></span>
-              </td>
-
-            </tr>
-            <tr>
-              <td>
-                <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
-                  Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
-                </video>
-              </td>
-              <td>"<%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.comment %>"
-              <BR>
-              <BR>
-              <span style="font-weight: bold;">Rating: <%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.rating %></span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="row">
+    <div class="col-sm">
+      <p class="user-header" style="font-size: 24px; text-align: center; " >Your all-time favourites!</p>
+      <table class="table-borderless all-time-table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">#1  <BR><%= link_to @videos_two.title, @videos_two %><BR><span style="font-weight: lighter; font-size: 15px;">By <%= @videos_two.user.name %></p></th>
+            <td>
+              <video controls width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">#2 <BR><%= link_to @videos_four.title, @videos_four %><BR><span style="font-weight: lighter; font-size: 15px;">By <%= @videos_four.user.name %></p></th>
+            <td>
+              <video controls width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space: nowrap;">#3 <BR><%= link_to @videos_six.title, @videos_six %><BR><span style="font-weight: lighter; font-size: 15px;">By <%= @videos_six.user.name %></p></th>
+            <td>
+              <video controls width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-   </div>
+    <div class="col-sm col-sm-border">
+      <p class="user-header" style="font-size: 24px; text-align: center;">You might also like these</p>
+      <table class="table-borderless like-these-table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+            </td>
+            <td style="white-space: nowrap;">
+            <%= link_to @videos_three.title, @videos_three, style: "font-weight: bold;" %><BR><span style="font-size: 15px;">By <%= @videos_three.user.name %></p></th>
+            <span style="font-style:italic;">"<%= @videos_three.reviews.sort_by(&:rating).reverse!.first.comment %>"</span>
+            <BR>
+            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_three.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+            </td>
+
+          </tr>
+          <tr>
+            <td>
+              <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+            </td>
+            <td style="white-space: nowrap;">
+            <%= link_to @videos_five.title, @videos_five, style: "font-weight: bold;" %><BR><span style="font-size: 15px;">By <%= @videos_five.user.name %></p></th>
+            <span style="font-style:italic;">"<%= @videos_five.reviews.sort_by(&:rating).reverse!.first.comment %>"</span>
+            <BR>
+            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_five.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+            </td>
+
+          </tr>
+          <tr>
+            <td>
+              <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
+                Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
+              </video>
+            </td>
+            <td style="white-space: nowrap;">
+            <%= link_to @videos_eight.title, @videos_eight, style: "font-weight: bold;" %><BR><span style="font-size: 15px;">By <%= @videos_eight.user.name %></p></th>
+            <span style="font-style:italic;">"<%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.comment %>"</span>
+            <BR>
+            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
 
