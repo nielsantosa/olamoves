@@ -60,9 +60,9 @@ class PagesController < ApplicationController
     @workout = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
     @workout = 0 if @workout.nil?
 
-    v =  @videos_three.reviews.sort_by(&:rating)
+    v =  @videos_three.reviews.sort_by(&:rating).reverse!.first
     p v
-    raise
+
 
   end
 

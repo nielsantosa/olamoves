@@ -272,7 +272,11 @@
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
-              <td><%= @c %></td>
+              <td>"<%= @videos_three.reviews.sort_by(&:rating).reverse!.first.comment %>"
+              <BR>
+              <BR>
+              <span style="font-weight: bold;">Rating: <%= @videos_three.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+              </td>
 
 
             </tr>
@@ -282,7 +286,11 @@
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
-              <td>Review</td>
+              <td>"<%= @videos_five.reviews.sort_by(&:rating).reverse!.first.comment %>"
+              <BR>
+              <BR>
+              <span style="font-weight: bold;">Rating: <%= @videos_five.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+              </td>
 
             </tr>
             <tr>
@@ -291,7 +299,11 @@
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
-              <td>Review</td>
+              <td>"<%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.comment %>"
+              <BR>
+              <BR>
+              <span style="font-weight: bold;">Rating: <%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+              </td>
             </tr>
           </tbody>
         </table>
