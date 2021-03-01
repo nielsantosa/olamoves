@@ -94,11 +94,7 @@ puts "Generating Videos - start"
     user: User.where(instructor: true).sample)
 
     puts "Creating reviews - start"
-    (1..4).to_a.each do |i|
-
-      puts "Creating review - #{i}"
-      Review.create!(user: User.where(instructor: false).sample, video: video, comment: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false), rating: rand(1..5))
-  end
+    Review.create!(user: User.where(instructor: false).sample, video: video, comment: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false), rating: rand(1..5))
 end
 
 puts "Creating Users - start"

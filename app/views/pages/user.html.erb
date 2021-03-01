@@ -275,7 +275,7 @@
             <%= link_to @videos_three.title, @videos_three, style: "font-weight: bold;" %><BR><span style="font-size: 15px;">By <%= @videos_three.user.name %></p></th>
             <span style="font-style:italic;">"<%= @videos_three.reviews.sort_by(&:rating).reverse!.first.comment %>"</span>
             <BR>
-            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_three.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_three.reviews.sort_by(&:rating).first.rating %></span>
             </td>
 
           </tr>
@@ -289,7 +289,7 @@
             <%= link_to @videos_five.title, @videos_five, style: "font-weight: bold;" %><BR><span style="font-size: 15px;">By <%= @videos_five.user.name %></p></th>
             <span style="font-style:italic;">"<%= @videos_five.reviews.sort_by(&:rating).reverse!.first.comment %>"</span>
             <BR>
-            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_five.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_five.reviews.sort_by(&:rating).first.rating %></span>
             </td>
 
           </tr>
@@ -303,7 +303,7 @@
             <%= link_to @videos_eight.title, @videos_eight, style: "font-weight: bold;" %><BR><span style="font-size: 15px;">By <%= @videos_eight.user.name %></p></th>
             <span style="font-style:italic;">"<%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.comment %>"</span>
             <BR>
-            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_eight.reviews.sort_by(&:rating).reverse!.first.rating %></span>
+            <span style="font-weight: bold; font-size: 15px;" >Rating: <%= @videos_eight.reviews.sort_by(&:rating).first.rating %></span>
             </td>
           </tr>
         </tbody>
