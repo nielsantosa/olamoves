@@ -4,12 +4,12 @@
   <!--Carousel Wrapper-->
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-    <!--Controls-->
-    <div class="controls">
+    <!--muted-->
+    <div class="muted">
       <a class="btn-floating left" href="#multi-item-example" data-slide="prev"><i class="fas fa-play"></i></a>
       <a class="btn-floating right" href="#multi-item-example" data-slide="next"><i class="fas fa-play"></i></a>
     </div>
-    <!--/.Controls-->
+    <!--/.muted-->
 
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="card align-items-center">
-              <video controls width="300" src="<%= @videos_one.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_one.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
 
@@ -34,7 +34,7 @@
 
           <div class="col-md-4 clearfix d-none d-md-block">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -47,7 +47,7 @@
 
           <div class="col-md-4 clearfix d-none d-md-block">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -68,7 +68,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -81,7 +81,7 @@
 
           <div class="col-md-4 clearfix d-none d-md-block">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -94,7 +94,7 @@
 
           <div class="col-md-4 clearfix d-none d-md-block">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -115,7 +115,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_seven.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_seven.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -128,7 +128,7 @@
 
           <div class="col-md-4 clearfix d-none d-md-block">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -141,7 +141,7 @@
 
           <div class="col-md-4 clearfix d-none d-md-block">
             <div class="card mb-2">
-              <video controls width="300" src="<%= @videos_nine.video_url %>" type="<%= @video_type %>">
+              <video muted width="300" src="<%= @videos_nine.video_url %>" type="<%= @video_type %>">
                 Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
               </video>
               <div class="card-body">
@@ -192,7 +192,7 @@
     </div>
     <div class="col-3">
       <p class="session-text">Take a breather</p>
-      <video controls width="250" autoplay src="<%= @video.video_url %> "> <!-- Showing the video type -->
+      <video muted width="250" autoplay src="<%= @video.video_url %> "> <!-- Showing the video type -->
       Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
       </video>
     </div>
@@ -217,7 +217,7 @@
             <tr>
               <th scope="row">#1</th>
               <td>
-                <video controls width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
+                <video muted width="300" src="<%= @videos_two.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
@@ -225,7 +225,7 @@
             <tr>
               <th scope="row">#2</th>
               <td>
-                <video controls width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
+                <video muted width="300" src="<%= @videos_four.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
@@ -233,7 +233,7 @@
             <tr>
               <th scope="row">#3</th>
               <td>
-                <video controls width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
+                <video muted width="300" src="<%= @videos_six.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
@@ -254,7 +254,7 @@
             <tr>
               <th scope="row">#1</th>
               <td>
-                <video controls width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
+                <video muted width="300" src="<%= @videos_three.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
@@ -264,7 +264,7 @@
             <tr>
               <th scope="row">#2</th>
               <td>
-                <video controls width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
+                <video muted width="300" src="<%= @videos_five.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
@@ -274,7 +274,7 @@
             <tr>
               <th scope="row">#3</th>
               <td>
-                <video controls width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
+                <video muted width="300" src="<%= @videos_eight.video_url %>" type="<%= @video_type %>">
                   Sorry, your browser doesn't support embedded videos. <!-- Alternate text if the video cannot be not shown -->
                 </video>
               </td>
