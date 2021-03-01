@@ -16,7 +16,7 @@
 <!-- if instructor-->
 <% if @user.instructor? %>
 
-  <div class="container">
+  <div class="container my-3">
     <div class="video-container my-10">
       <h3>My Published Videos</h3>
         <%= link_to 'Upload a video', new_video_path , class: 'btn btn-primary', style: 'display: inline-block' %>
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container my-3">
     <div class="video-container my-10">
       <h3>My Purchased Videos</h3>
       <div class="vid-grid">
@@ -63,7 +63,7 @@
 
 <% else %>
   <!-- if not instructor-->
-  <div class="container">
+  <div class="container my-3">
     <div class="video-container my-10">
       <h3>My Purchased Videos</h3>
       <div class="vid-grid">
