@@ -2,6 +2,9 @@ require "open-uri"
 
 puts "Start seeding 🍑"
 
+puts "Cleaning reviews data"
+Review.destroy_all
+
 puts "Cleaning orders data 🧹"
 Order.destroy_all
 
@@ -29,8 +32,8 @@ puts "Creating instructors..."
 end
 
 def generate_pexel_video
-  pexels_key = "563492ad6f9170000100000138c8f4c57b1c4c69a53d72daaeb561d3" # Your authentication key
-  client = Pexels::Client.new(pexels_key) # Set up the client
+   # Your authentication key
+  client = Pexels::Client.new(ENV['PEXELS_KEY']) # Set up the client
 
   pexels_json_parsed = client.videos.search('yoga') # Search for videos with keyword "waves", return json files with 15 results
   videos = pexels_json_parsed.videos
