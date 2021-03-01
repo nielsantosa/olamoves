@@ -19,7 +19,7 @@
         <div class="vid-title">
           <%= order.video.title %>
         </div>
-        <div>SGD <%= order.video.price_cents %></div>
+        <div>SGD <%= order.video.price %></div>
         <div>
           <%= link_to order_path(order), method: "delete" do %>
           <i class="fas fa-trash"></i>
