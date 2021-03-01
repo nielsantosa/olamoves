@@ -2,10 +2,14 @@
   <div class="instructor-box">
     <% @users.each do |user| %>
       <div style="text-align:center;">
-        <%= cl_image_tag user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge', style: 'margin: 8px auto;' %>
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge', style: 'margin: 8px auto;' %>
+        <% else %>
+          <%=  cl_image_tag('https://res.cloudinary.com/cheyennelu/image/upload/v1614151735/profile-default.jpg', class: 'avatar-xlarge', style: 'margin: 8px auto;' ) %>
+        <% end %>
         <p><%= user.name %></p>
-        <%= link_to instructor_videos_path(user) do %>
-          <p>Number of videos: <%= user.videos.count %></p>
+        <%= link_to instructor_videos_path(user), class: 'btn btn-primary btn-xs' do %>
+          Number of videos: <%= user.videos.count %>
         <% end %>
       </div>
     <% end %>

@@ -1,23 +1,31 @@
 <div class="container justify-content-around">
   <div class="row">
     <div style="margin: 8px auto;">
-      <%= cl_image_tag @user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge' %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, crop: :fill, gravity: :face, class: 'instructor-pg-photo avatar-xlarge', style: 'margin: 8px auto;' %>
+      <% else %>
+        <%=  cl_image_tag('https://res.cloudinary.com/cheyennelu/image/upload/v1614151735/profile-default.jpg', class: 'avatar-xlarge', style: 'margin: 8px auto;' ) %>
+      <% end %>
       <h5 style="text-align: center; padding-top: 10px"><%= @user.name %></h5>
     </div>
     <div class="col-12 ">
       <div class="video-grid shadow p-3 mb-5 bg-white rounded mt-4 ml-5">
-        <% @videos.each do |vid| %>
-          <div class="video-card">
-            <video controls src="<%= vid.video_url %>" type="<%= vid.video_type %>">
-              Sorry, your browser doesn't support embedded videos.
-            </video>
-            <%= link_to video_path(vid) do %>
-              <h5 style="text-align: center; padding-top: 10px;"><%= vid.title %></h5>
-            <% end %>
-          </div>
+        <% if @user.videos == [] %>
+          <%= 'This instructor has not uploaded any videos.' %>
+        <% else %>
+          <% @videos.each do |vid| %>
+            <div class="video-card">
+              <video controls src="<%= vid.video_url %>" type="<%= vid.video_type %>">
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <%= link_to video_path(vid) do %>
+                <h5 class="vid-title" style="padding-top: 10px;"><%= vid.title %></h5>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       </div>
-      <%= link_to 'Back to Instructors', instructors_path, class: 'btn btn-primary my-10' %>
+      <%= link_to 'Back to Instructors', instructors_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
