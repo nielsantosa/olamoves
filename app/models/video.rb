@@ -1,6 +1,6 @@
 class Video < ApplicationRecord
   has_many :orders
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   belongs_to :user
 
   validates :title, presence: true

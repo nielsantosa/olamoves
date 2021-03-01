@@ -19,12 +19,26 @@ Video.destroy_all
 
 puts "Creating instructors..."
 
-5.times do
+2.times do
   name = Faker::Name.name
   email = Faker::Internet.email
   password = "testtest"
   puts "Creating User #{name}"
   user = User.new(name: name, email: email, password: password, instructor: true)
+  file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
+  user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
+
+  user.save!
+end
+
+
+
+2.times do
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  password = "testtest"
+  puts "Creating User #{name}"
+  user = User.new(name: name, email: email, password: password, instructor: false)
   file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
   user.photo.attach(io: file, filename: "#{name}.png", content_type: 'image/png')
 
@@ -41,6 +55,7 @@ def generate_pexel_video
   # video_type = pexels_json_parsed.videos[0].files[0].file_type # Similar to line above, but take the video type
   # [video_url, video_type]
 end
+
 
 def generate_video(selected_videos)
   chosen_video = Video.all.sample
@@ -68,7 +83,7 @@ puts "Generating Videos - start"
   video_type = videos[i].files[0].file_type
 
   puts "Creating video #{title}"
-  Video.create!(
+  video = Video.create!(
     title: title,
     description: description,
     price: price,
@@ -77,6 +92,13 @@ puts "Generating Videos - start"
     video_url: video_url,
     video_type: video_type,
     user: User.where(instructor: true).sample)
+
+    puts "Creating reviews - start"
+    (1..4).to_a.each do |i|
+
+      puts "Creating review - #{i}"
+      Review.create!(user: User.where(instructor: false).sample, video: video, comment: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 0, open_compounds_allowed: false), rating: rand(1..5))
+  end
 end
 
 puts "Creating Users - start"

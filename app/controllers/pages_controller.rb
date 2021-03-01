@@ -55,9 +55,15 @@ class PagesController < ApplicationController
     user = current_user
     @goals = Goal.where(user: user, completed: false)
 
-    @video = @videos[9]
+    @workout = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
+    @workout = 0 if @workout.nil?
 
-    @workout  = Workout.where(user: current_user).group("DATE_TRUNC('week', date)").count.values.last
+
+
+    pexels_key = "563492ad6f9170000100000138c8f4c57b1c4c69a53d72daaeb561d3" # Your authentication key
+    client = Pexels::Client.new(pexels_key) # Set up the client
+    pexels_json_parsed = client.videos.search('meditation') # Search for videos with keyword "waves", return json files with 15 results
+    @video_url = pexels_json_parsed.videos[0].files[0].link # Choose the first video, take the first video file type (there are HD, SD, etc. options), then take the url link
   end
 
   def instructors
