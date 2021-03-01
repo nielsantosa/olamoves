@@ -23,7 +23,7 @@
         <div class="vid-grid">
           <% @user.videos.each do |vid| %>
             <div>
-              <video controls width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+              <video muted width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
                 Sorry, your browser doesn't support embedded videos.
               </video>
               <%= link_to video_path(vid) do %>
@@ -48,7 +48,7 @@
       <div class="vid-grid">
         <% @purchased_videos.each do |vid| %>
           <div>
-            <video controls width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+            <video muted width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
               Sorry, your browser doesn't support embedded videos.
             </video>
             <%= link_to video_path(vid) do %>
@@ -69,7 +69,7 @@
       <div class="vid-grid">
         <% @purchased_videos.each do |vid| %>
           <div>
-            <video controls width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
+            <video muted width="300" src="<%= vid.video_url %>" type="<%= vid.video_type %>" class="video">
               Sorry, your browser doesn't support embedded videos.
             </video>
             <%= link_to video_path(vid) do %>
