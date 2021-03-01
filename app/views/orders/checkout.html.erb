@@ -43,11 +43,11 @@
   <% if @purchased_orders.first %>
   <div class="total-price p-4 my-3 rounded bg-white">
     <!-- For NON HEROKU / NON-SERVER ONLY -->
-    <%= link_to "PROCEED TO PAYMENT", confirm_path, class: 'btn btn-primary my-2' %>
+    <%#= link_to "PROCEED TO PAYMENT", confirm_path, class: 'btn btn-primary my-2' %>
     <!-- For HEROKU / SERVER ON NGROK ONLY -->
     <%= form_tag purchases_path, method: :post do %>
     <%= hidden_field_tag 'orders', @purchased_orders %>
-    <%= submit_tag 'PROCEED TO PAYMENT (HEROKU/ ONLY IF SERVER ON)', class: 'btn btn-primary my-2' %>
+    <%= submit_tag 'REVIEW YOUR ORDER', class: 'btn btn-primary my-2' %>
     <% end %>
   </div>
   <% end %>
