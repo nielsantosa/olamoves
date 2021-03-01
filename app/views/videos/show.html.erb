@@ -26,7 +26,7 @@
   <div class="btn-div">
     <%= form_for @video, :url => orders_path, method: 'post' do |form| %>
       <%= form.hidden_field :video, value: @video.id %>
-      <%= form.submit "Add to cart - $#{@video.price_cents} ", :class => 'btn btn-primary btn-center' %>
+      <%= form.submit "Add to cart - $#{@video.price} ", :class => 'btn btn-primary btn-center' %>
     <% end %>
   </div>
   <div>

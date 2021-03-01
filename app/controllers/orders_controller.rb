@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
     @total_price = 0
     @purchased_videos.each do |video|
-      @total_price += video.price_cents
+      @total_price += video.price
     end
   end
 
