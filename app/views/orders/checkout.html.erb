@@ -47,7 +47,7 @@
     <!-- For HEROKU / SERVER ON NGROK ONLY -->
     <%= form_tag purchases_path, method: :post do %>
     <%= hidden_field_tag 'orders', @purchased_orders %>
-    <%= submit_tag 'PROCEED TO PAYMENT (HEROKU/ ONLY IF SERVER ON)', class: 'btn btn-primary my-2' %>
+    <%= submit_tag 'REVIEW YOUR ORDER (HEROKU/ ONLY IF SERVER ON)', class: 'btn btn-primary my-2' %>
     <% end %>
   </div>
   <% end %>
