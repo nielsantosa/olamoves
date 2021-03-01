@@ -10,10 +10,17 @@ class ReviewsController < ApplicationController
     @review.video = @video
     @review.user = current_user
     if @review.save
+      @current_review = @review
       redirect_to video_path(@video)
     else
       render :new
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to video_path(@review.video)
   end
 
   private

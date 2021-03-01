@@ -1,6 +1,7 @@
 <div class="review-portion">
   <h1>Reviews
   <%= link_to "Add a Review", new_video_review_path(video), class: 'btn btn-primary' %>
+
   </h1>
   <% @video.reviews.each do |review| %>
     <div class="review-container">
@@ -13,6 +14,11 @@
               <img src="http://simpleicon.com/wp-content/uploads/multy-user-256x256.png" alt="standardPic">
             <% end %>
             <h2> <%= review.user.name %> </h2>
+            <div class="trash-icon">
+              <%= link_to review_path(review), method: "delete" do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </div>
           </div>
           <div class="rating-stars d-flex pt-2">
           <% review.rating.times do  %>
