@@ -27,8 +27,8 @@
                 Sorry, your browser doesn't support embedded videos.
               </video>
               <%= link_to video_path(vid) do %>
-                <h5><%= vid.title %></h5>
-                <p>By <%= vid.user.name %> </p>
+                <h5 class="vid-title"><%= vid.title %></h5>
+                <p class="vid-details">By <%= vid.user.name %> </p>
               <% end %>
               <%= link_to edit_video_path(vid), style: 'margin-right: 32px;' do %>
                 <i class="fas fa-pen"></i>
@@ -52,8 +52,8 @@
               Sorry, your browser doesn't support embedded videos.
             </video>
             <%= link_to video_path(vid) do %>
-              <h5><%= vid.title %></h5>
-              <p>By <%= vid.user.name %> </p>
+              <h5 class="vid-title"><%= vid.title %></h5>
+              <p class="vid-details">By <%= vid.user.name %> </p>
             <% end %>
           </div>
         <% end %>
@@ -73,8 +73,8 @@
               Sorry, your browser doesn't support embedded videos.
             </video>
             <%= link_to video_path(vid) do %>
-              <h5><%= vid.title %></h5>
-              <p>By <%= vid.user.name %> </p>
+              <h5 class="vid-title"><%= vid.title %></h5>
+              <p class="vid-details">By <%= vid.user.name %> </p>
             <% end %>
           </div>
         <% end %>
