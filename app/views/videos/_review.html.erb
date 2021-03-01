@@ -1,7 +1,8 @@
 <div class="review-portion">
   <h1>Reviews
-  <%= link_to "Add a Review", new_video_review_path(video), class: 'btn btn-primary' %>
-
+  <% if @order && @review.nil? %>
+    <%= link_to "Add a Review", new_video_review_path(video), class: 'btn btn-primary' %>
+  <% end %>
   </h1>
   <% @video.reviews.each do |review| %>
     <div class="review-container">
@@ -28,6 +29,7 @@
         </div>
         <div class="comment-box">
           <p> <%= review.comment %> </p>
+          <%= link_to 'Edit Review', edit_video_review_path(video, review), class: 'btn btn-primary' %>
         </div>
       </div>
     </div>

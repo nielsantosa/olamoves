@@ -9,11 +9,31 @@ class ReviewsController < ApplicationController
     @video = Video.find(params[:video_id])
     @review.video = @video
     @review.user = current_user
+    @order = Order.where(video: @video, user: current_user, confirmed: true)
+    if @order.exists?
+      if @review.save
+        redirect_to video_path(@video)
+      else
+        render :new
+      end
+    else
+      redirect_to video_path(@video)
+    end
+  end
+
+  def edit
+    @video = Video.find(params[:video_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @video = Video.find(params[:video_id])
+    @review.update(review_params)
     if @review.save
-      @current_review = @review
       redirect_to video_path(@video)
     else
-      render :new
+      render :edit
     end
   end
 

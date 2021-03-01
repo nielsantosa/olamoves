@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     collection do
       get 'difficulty/:level', action: :difficulty, as: 'difficulty_filter'
     end
-    resources :reviews, only: [:create, :new]
+    resources :reviews, only: [:create, :new, :edit, :update]
   end
 
   resources :reviews, only: [:destroy]

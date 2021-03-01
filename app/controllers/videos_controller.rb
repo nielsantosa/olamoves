@@ -15,6 +15,8 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @order = Order.find_by(video: @video, user: current_user, confirmed: true)
+    @review = Review.find_by(video: @video, user: current_user)
   end
 
   def difficulty
