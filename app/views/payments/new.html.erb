@@ -25,7 +25,9 @@
       </div>
 
       <div class = "text-right">
-        <button id="pay" class="btn btn-primary my-2">Pay</button>
+        <div>
+          <button id="pay" class="btn btn-primary my-2">Proceed to Payment</button>
+        </div>
 
         <!-- # Commented for the lecture, remove comments. -->
         <script src="https://js.stripe.com/v3/"></script>
@@ -42,7 +44,9 @@
           });
 
         </script>
-        <%= link_to "Cancel Payment", purchase_path(@purchase), method: :delete, class: "btn btn-primary my-2" %>
+        <div>
+          <%= link_to "Cancel Payment", purchase_path(@purchase), method: :delete %>
+        </div>
       </div>
     </div>
   </div>
